@@ -52,7 +52,7 @@ function handleErrors(...args) {
 	gutil.beep();
 	this.emit('end');
 
-	notfify.onError({
+	notify.onError({
 		title: 'Error',
 		message: '<%= error.message %>'
 	}).apply(this, args);
@@ -75,12 +75,13 @@ function updateConfig(done) {
 	done();
 }
 
-gulp.task('browserSync', () => {
+gulp.task('browserSync', (done) => {
 	browserSync.init(null, {
-		proxy: 'http://localhost:3000',
+		proxy: 'http://localhost:8000',
 		files: ["public/**/*.*"],
 		port: 7000
 	});
+	done();
 });
 
 gulp.task('styles', (done) => {
@@ -112,7 +113,7 @@ gulp.task('styles', (done) => {
 		done();
 });
 
-gulp.task('scripts', () => {
+gulp.task('scripts', (done) => {
 	gulp.src(paths.dev.js)
 		.pipe(plumber({
 			errorHandler: handleErrors
@@ -126,9 +127,10 @@ gulp.task('scripts', () => {
 		.pipe(gulp.dest(paths.prod.js))
 		.pipe(notify('Scripts Task Complete'))
 		.pipe(browserSync.reload({stream: true}))
+		done();
 });
 
-gulp.task('html', () => {
+gulp.task('html', (done) => {
 	gulp.src(paths.dev.views)
 		.pipe(plumber())
 		.pipe(browserSync.reload({stream: true}))
@@ -140,14 +142,15 @@ gulp.task('images', () => {
 			errorHandler: handleErrors
 		}))
 		.pipe(newer(paths.prod.images))
-		.pipe(cache(imagemine({
+		.pipe(cache(imagemin({
 			progressive: true,
 			interlaed: true,
 			use: [pngquant()]
 		})))
 		.pipe(gulp.dest(paths.prod.images))
+		done();
 })
 
 gulp.task(
 	'default',
-	gulp.parallel('browserSync','scripts', 'styles', 'html', 'images', 'html' ));
+	gulp.parallel('browserSync', 'styles', 'html', 'html' ));

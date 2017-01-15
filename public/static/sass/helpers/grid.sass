@@ -1,0 +1,204 @@
+.columns
+	margin-left: -0.75rem
+	margin-right: -0.75rem
+	margin-top: -0.75rem
+
+	&:last-child
+		margin-bottom: -0.75rem
+
+	&:not(:last-child)
+		margin-bottom: 0.75em
+
+	&.h-center
+		justify-content: center
+
+	&.v-center
+		align-items: center
+
+	&.centered
+		justify-content: center
+		align-items: center
+
+	&.is-mobile
+		display: flex
+
+	&.multiline
+		flex-wrap: wrap
+
+	&.gapless
+		margin-left: 0
+		margin-right: 0
+		margin-top: 0
+
+		&:last-child
+			margin-bottom: 0
+
+		&:not(:last-child)
+			margin-bottom: 1.5rem
+
+		& > .column
+			margin: 0
+			padding: 0
+
+	&.is-grid
+		@include tablet()
+			flex-wrap: wrap
+
+			& > .column
+				max-width: 33.3333%
+				width: 33.3333%
+				padding: 0.75rem
+
+				& + column
+					margin-left: 0
+
+	@include tablet
+		&:not(.is-desktop)
+			display: flex
+
+	@include desktop
+		&.is-desktop
+			display: flex
+
+.columns.is-mobile
+	> &.is-full
+		flex: none
+		width: 100%
+
+	> &.is-three-quarters
+		flex: none
+		width: 75%
+
+	> &.is-two-thirds
+		flex: none
+		width: 66.6666%
+
+	> &.is-half
+		flex: none
+		width: 50%
+
+	> &.is-one-third
+		flex: none
+		width: 33.3333%
+
+	> &.is-one-quarter
+		flex: none
+		width: 25%
+
+	> &.is-offset-three-quarters
+		margin-left: 75%
+
+	> &.is-offset-two-thirds
+		margin-left: 66.6666%
+
+	> &.is-offset-half
+		margin-left: 50%
+
+	> &.is-offset-one-third
+		margin-left: 33.3333%
+
+	> &.is-offset-one-quarter
+		margin-left: 25%
+
+	@for $i from 1 through 12
+		.columns.is-mobile > &.is-#{$i}
+			flex: none
+			width: ($i / 12) * 100%
+		
+		.columns.is-mobile > &.is-offset-#{$i}
+			margin-left: ($i / 12) * 100%
+
+
+
+
+.column
+	display: block
+	flex-basis: 0
+	flex-grow: 1
+	flex-shrink: 1
+	padding: 0.75rem
+
+	@include mobile
+		@for $i from 1 through 12
+			&.is-#{$i}-mobile
+				flex: none
+				width: ($i / 12) * 100%
+
+			&.is-offset-#{$i}-mobile
+				margin-left: ($i / 12) * 100%
+
+	@include tablet
+		@for $i from 1 through 12
+			&.is-#{$i}-tablet
+				flex: none
+				width: ($i / 12) * 100%
+
+			&.is-offset-#{$i}-tablet
+				margin-left: ($i / 12) * 100%
+
+	@include desktop
+		@for $i from 1 through 12
+			&.is-#{$i}
+				flex: none
+				width: ($i / 12) * 100%
+
+			&.is-offset-#{$i}
+				margin-left: ($i / 12) * 100%
+
+	@include large-desktop
+		@for $i from 1 through 12
+			&.is-#{$i}-large
+				flex: none
+				width: ($i / 12) * 100%
+
+			&.is-offset-#{$i}-large
+				margin-left: ($i / 12) * 100%
+
+	@include widescreen
+		@for $i from 1 through 12
+			&.is-#{$i}-wide
+				flex: none
+				width: ($i / 12) * 100%
+
+			&.is-offset-#{$i}-wide
+				margin-left: ($i / 12) * 100%
+
+.tile
+	display: block
+	flex-basis: 0
+	flex-grow: 1
+	flex-shrink: 1
+	align-items: stretch
+	min-height: min-content
+
+	&.is-ancestor
+		margin-left: -0.75rem
+		margin-right: -0.75rem
+		margin-top: -0.75rem
+
+		&:last-child
+			margin-bottom: -0.75rem
+
+		&:not(:last-child)
+			margin-bottom: 0.75em
+
+	&.is-child
+		margin: 0
+
+	&.is-parent
+		padding: 0.75rem
+
+	&.is-vertical
+		flex-direction: column
+
+		& > .tile.is-child:not(:last-child)
+			margin-bottom: 1.5rem
+
+	@include tablet
+		&:not(.is-child)
+			display: flex
+
+		@for $i from 1 through 12
+			&.is-#{$i}
+				flex: none
+				width: ($i / 12) * 100%

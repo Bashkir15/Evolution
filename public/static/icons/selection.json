@@ -19,7 +19,8 @@
         "id": 245,
         "order": 81,
         "prevSize": 20,
-        "name": "phone"
+        "name": "phone",
+        "code": 59649
       },
       "setIdx": 1,
       "setId": 6,
@@ -43,7 +44,8 @@
         "id": 381,
         "order": 65,
         "prevSize": 20,
-        "name": "twitter"
+        "name": "twitter",
+        "code": 59650
       },
       "setIdx": 1,
       "setId": 6,
@@ -72,7 +74,8 @@
         "id": 32,
         "order": 69,
         "prevSize": 32,
-        "name": "hourglass"
+        "name": "hourglass",
+        "code": 57375
       },
       "setIdx": 3,
       "setId": 4,
@@ -101,7 +104,8 @@
         "id": 34,
         "order": 73,
         "prevSize": 32,
-        "name": "megaphone"
+        "name": "megaphone",
+        "code": 57377
       },
       "setIdx": 3,
       "setId": 4,
@@ -129,7 +133,8 @@
         "id": 42,
         "order": 72,
         "prevSize": 32,
-        "name": "streetsign"
+        "name": "streetsign",
+        "code": 57385
       },
       "setIdx": 3,
       "setId": 4,
@@ -159,7 +164,8 @@
         "id": 49,
         "order": 74,
         "prevSize": 32,
-        "name": "lightbulb"
+        "name": "lightbulb",
+        "code": 57392
       },
       "setIdx": 3,
       "setId": 4,
@@ -224,6 +230,31 @@
       "setIdx": 3,
       "setId": 4,
       "iconIdx": 70
+    },
+    {
+      "icon": {
+        "paths": [
+          "M170.080 296.765l357.92 311.235 357.981-311.287c6.206 5.878 10.019 14.235 10.019 23.507v383.562c0 17.821-14.371 32.219-32.098 32.219h-671.803c-18.053 0-32.098-14.425-32.098-32.219v-383.562c0-9.253 3.874-17.582 10.080-23.454zM192.115 256c-35.41 0-64.115 28.624-64.115 63.81v384.38c0 35.241 28.472 63.81 64.115 63.81h671.77c35.41 0 64.115-28.624 64.115-63.81v-384.38c0-35.241-28.472-63.81-64.115-63.81h-671.77zM528 566.4l-320-278.4h640l-320 278.4z"
+        ],
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "mail-envelope-closed"
+        ],
+        "grid": 32
+      },
+      "attrs": [],
+      "properties": {
+        "id": 5,
+        "order": 63,
+        "prevSize": 32,
+        "code": 59648,
+        "name": "mail-envelope-closed"
+      },
+      "setIdx": 5,
+      "setId": 2,
+      "iconIdx": 4
     },
     {
       "icon": {
@@ -326,7 +357,8 @@
         "ligatures": "menu",
         "id": 489,
         "prevSize": 24,
-        "name": "menu"
+        "name": "menu",
+        "code": 58834
       },
       "setIdx": 4,
       "setId": 3,
@@ -352,7 +384,8 @@
         "ligatures": "search",
         "id": 655,
         "prevSize": 24,
-        "name": "search"
+        "name": "search",
+        "code": 59574
       },
       "setIdx": 4,
       "setId": 3,
@@ -378,36 +411,12 @@
         "ligatures": "sentiment_satisfied",
         "id": 661,
         "prevSize": 24,
-        "name": "sentiment_satisfied"
+        "name": "sentiment_satisfied",
+        "code": 59411
       },
       "setIdx": 4,
       "setId": 3,
       "iconIdx": 661
-    },
-    {
-      "icon": {
-        "paths": [
-          "M170.080 296.765l357.92 311.235 357.981-311.287c6.206 5.878 10.019 14.235 10.019 23.507v383.562c0 17.821-14.371 32.219-32.098 32.219h-671.803c-18.053 0-32.098-14.425-32.098-32.219v-383.562c0-9.253 3.874-17.582 10.080-23.454zM192.115 256c-35.41 0-64.115 28.624-64.115 63.81v384.38c0 35.241 28.472 63.81 64.115 63.81h671.77c35.41 0 64.115-28.624 64.115-63.81v-384.38c0-35.241-28.472-63.81-64.115-63.81h-671.77zM528 566.4l-320-278.4h640l-320 278.4z"
-        ],
-        "attrs": [],
-        "isMulticolor": false,
-        "isMulticolor2": false,
-        "tags": [
-          "mail-envelope-closed"
-        ],
-        "grid": 32
-      },
-      "attrs": [],
-      "properties": {
-        "id": 5,
-        "order": 63,
-        "prevSize": 32,
-        "code": 59648,
-        "name": "mail-envelope-closed"
-      },
-      "setIdx": 5,
-      "setId": 2,
-      "iconIdx": 4
     },
     {
       "icon": {
@@ -458,7 +467,8 @@
         "name": "instagram",
         "order": 68,
         "id": 403,
-        "prevSize": 32
+        "prevSize": 32,
+        "code": 60050
       },
       "setIdx": 6,
       "setId": 1,
@@ -466,6 +476,9 @@
     }
   ],
   "height": 1024,
+  "metadata": {
+    "name": "icomoon"
+  },
   "preferences": {
     "showGlyphs": true,
     "showQuickUse": true,
