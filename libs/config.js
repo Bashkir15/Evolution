@@ -1,5 +1,5 @@
 
-export default const paths = {
+const config = {
 	dev: {
 		views: './public/**/*.ejs',
 		styles: './public/static/sass/**/*.sass',
@@ -14,3 +14,5 @@ export default const paths = {
 		images: './dist/images'
 	}
 }
+
+export default config

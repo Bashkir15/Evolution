@@ -1,4 +1,8 @@
-import gulp from 'gulp'
+import tasks from './libs/tasks'
+
+module.exports = require('gulp');
+
+/**import gulp from 'gulp'
 import plumber from 'gulp-plumber'
 import notify from 'gulp-notify'
 import rename from 'gulp-rename'
@@ -23,10 +27,10 @@ import minimist from 'minimist'
 
 const paths = {
 	dev: {
-		views: './public/**/*.ejs',
-		styles: './public/static/sass/**/*.sass',
+		views: './public/**//**.ejs',
+		styles: './public/static/sass/**//*.sass',
 		mainSass: './public/static/sass/main.sass',
-		images: './public/static/images/**/*.+(png|jpg|gif|svg)',
+		images: './public/static/images/**//*.+(png|jpg|gif|svg)',
 		js: './dist/main.js'
 	},
 
@@ -78,7 +82,7 @@ function updateConfig(done) {
 gulp.task('browserSync', (done) => {
 	browserSync.init(null, {
 		proxy: 'http://localhost:8000',
-		files: ["public/**/*.*"],
+		files: ["public/**//*.*"],
 		port: 7000
 	});
 	done();
@@ -99,7 +103,7 @@ gulp.task('styles', (done) => {
 			browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'],
 			cascade: true
 		}))
-		.pipe(pure(['./public/**/*.ejs', './public/**/*.js']))
+		.pipe(pure(['./public/**//*.ejs', './public/**//*.js']))
 		.pipe(uglifycss({
 			maxLineLne: 80
 		}))
@@ -153,4 +157,4 @@ gulp.task('images', () => {
 
 gulp.task(
 	'default',
-	gulp.parallel('browserSync', 'styles', 'html', 'html' ));
+	gulp.parallel('browserSync', 'styles', 'html', 'html' )); */
