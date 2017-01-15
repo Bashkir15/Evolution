@@ -11,7 +11,7 @@ import autoprefixer from 'gulp-autoprefixer'
 import sass from 'gulp-sass'
 
 import handleErrors from '../utils/handleErrors'
-import { config } from '../config'
+import config from '../config'
 import { server } from './serve'
 
 export function processStyles() {

@@ -1,5 +1,5 @@
 
-export const paths = {
+export default const paths = {
 	dev: {
 		views: './public/**/*.ejs',
 		styles: './public/static/sass/**/*.sass',
