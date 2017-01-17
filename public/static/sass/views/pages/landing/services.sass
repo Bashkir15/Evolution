@@ -110,6 +110,7 @@
 	width: 90%
 	padding-top: 75px
 	margin: 0 auto
+	z-index: 35
 
 
 .selection-hexagon
@@ -187,6 +188,7 @@
 	align-items: center
 	padding-top: 80px
 	margin-bottom: -180px
+	z-index: 35
 
 	h2
 		@include lato()
@@ -243,3 +245,25 @@
 		width: 200px
 		background: rgba(0,0,0,0.6)
 		margin-bottom: 120px
+
+@media screen and (min-width: 490px)
+	.service-top-diamond
+		margin-top: -160px
+		width: 480px
+		height: 480px
+
+	.service-bottom-diamond
+		width: 480px
+		height: 480px
+		margin-bottom: 0
+
+	.service-header
+		margin-top: -410px
+
+	.service-selected
+		margin-bottom: -350px
+
+	.service-images
+		> div
+			height: 185px
+			width: 275px
