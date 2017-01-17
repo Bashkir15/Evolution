@@ -5,7 +5,7 @@
 
 .landing-header
 	position: relative
-	height: 900px
+	height: 1000px
 	margin-top: -70px
 
 	img
@@ -17,7 +17,7 @@
 	position: absolute
 	top: 300px
 	left: 0
-	height: 600px
+	height: 700px
 	width: 100%
 	background: #000
 
@@ -115,6 +115,48 @@
 					&:nth-of-type(2)
 						font-size: 22px
 
+.landing-header-browse
+	display: flex
+	flex-direction: column
+	align-items: center
+	width: 100%
+
+	h2
+		margin-top: 30px
+		margin-bottom: 10px
+		@include lato()
+		font-weight: 300
+		letter-spacing: 3px
+		font-size: 28px
+		text-transform: uppercase
+		color: #4b77a2
+
+.browse-decorator
+	height: 2px
+	width: 80px
+	background-color: #4b77a2
+
+.landing-juice-drop
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: center
+	height: 65px
+	width: 65px
+	background-color: #5f98cf
+	border-radius: 80% 0 55% 50% / 55% 0 80% 50%
+	text-overflow: clip
+	transform: rotateZ(-45deg)
+
+	> div
+		position: relative
+		height: 30px
+		width: 30px
+		background-color: rgba(0,0,0,0.5)
+		border-radius: 80% 0 55% 50% / 55% 0 80% 50%
+		text-overflow: clip
+
+
 @media screen and (min-width: 490px)
 	.landing-header-links
 		flex-direction: row
@@ -144,5 +186,3 @@
 			width: 40%
 			margin: 0 auto 35px auto
 
-	.landing-header-links
-		margin-bottom: 200px
