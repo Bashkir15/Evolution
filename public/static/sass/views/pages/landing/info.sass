@@ -15,6 +15,9 @@
 	position: relative
 	z-index: 100
 
+.landing-info-non-mobile
+	display: none
+
 .landing-about
 	width: 80%
 	padding-top: 60px
@@ -229,3 +232,32 @@
 			button
 				span
 					color: #fefefe
+
+@media screen and (min-width: 490px)
+	.locations
+		display: flex
+		align-items: center
+		justify-content: space-around
+		flex-wrap: wrap
+		padding-top: 30px
+
+		.location
+			width: 40%
+			margin-bottom: 45px
+
+			p
+				font-size: 18px
+
+				span
+					display: inline-block
+					margin-right: 5px
+
+			&:nth-of-type(5)
+				margin-bottom: 0
+
+	.landing-hours
+		> p
+			padding-top: 13px
+
+		p
+			font-size: 17px
