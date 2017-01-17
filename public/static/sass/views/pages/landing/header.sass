@@ -74,10 +74,11 @@
 			button
 				height: 45px
 				width: 150px
-				border: 1px solid #ed8f03
+				border: 1px solid
+				border-color: #ed8f03
 				border-radius: 6px
-				background: linear-gradient(to bottom, #ffb75e 0%, #ed8f03 100%)
-				background:#ed8f03
+				background-color: #ed8f03
+				transition: background-color .3s ease-out, border-color .3s ease-out
 
 				span
 					@include open()
@@ -86,6 +87,10 @@
 					font-size: 14px
 					text-transform: uppercase
 					color: #fff
+
+				&:hover
+					background-color: darken(#ed8f03, 10%)
+					border-color: darken(#ed8f03, 10%)
 
 		&:nth-of-type(2)
 			button
