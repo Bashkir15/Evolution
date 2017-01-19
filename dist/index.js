@@ -53,6 +53,8 @@
 		var searchContainer = document.querySelector('.nav-search-container');
 		var searchStick = document.querySelector('.search-stick');
 		var searchBox = document.querySelector('.search-box');
+		var closeSearch1 = document.querySelector('.close-search-1');
+		var closeSearch2 = document.querySelector('.close-search-2');
 	
 		searchIcon.addEventListener('click', openSearch, false);
 		searchStick.addEventListener('click', openSearch, false);
@@ -71,7 +73,15 @@
 				}, 200);
 	
 				addInputBox();
+				showX();
 			}
+		}
+	
+		function showX() {
+			closeSearch1.classList.remove('slide-out');
+			closeSearch2.classList.remove('.slide-out');
+			closeSearch1.classList.add('slide-in');
+			closeSearch2.classList.add('slide-in');
 		}
 	
 		function addInputBox() {

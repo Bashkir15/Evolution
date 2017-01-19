@@ -84,6 +84,24 @@
 	to
 		width: 100px
 
+@keyframes build-x-one
+	from
+		top: 40px
+		right: 4px
+
+	to
+		top: 6px
+		right: 16px
+
+@keyframes build-x-two
+	from
+		top: -20px
+		right: 4px
+
+	to
+		top: 6px
+		right: 16px
+
 @media screen and(min-width: 1000px)
 	.nav-item-search
 		position: relative
@@ -129,15 +147,20 @@
 
 	.search-box
 		background: none
-		width: 80%
+		width: 278px
+		height: 25px
+		margin-top: -12px
+		outline: none
 		display: none
 		border: none
-		margin-top: 12px
 		font-size: 16px
 		color: white
 		position: absolute
 		left: 17px
 		z-index: 100
+
+		&.search-open
+			display: block
 
 	.icon-search
 		position: absolute
@@ -147,6 +170,37 @@
 		color: rgba(220, 220, 220, .8)
 		display: none
 		z-index: 100
+
+	.close-search-1
+		content: ''
+		position: absolute
+		top: 40px
+		right: 4px
+		width: 3px
+		height: 15px
+		background: #909ea8
+		transform: rotate(315deg)
+		z-index: 100
+		cursor: pointer
+
+	.close-search-2
+		content: ''
+		position: absolute
+		top: -20px
+		right: 4px
+		width: 3px
+		height: 15px
+		background: #909ea8
+		transform: rotate(225deg)
+		z-index: 100
+		cursor: pointer
+
+	.close-search-1.slide-in
+		animation: build-x-one .2s ease-out .8s forwards
+
+	.close-search-2.slide-in
+		animation: build-x-two .2s ease-out .8s forwards
+		display: block
 
 	.no-results-message
 		display: none
