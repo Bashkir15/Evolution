@@ -1,3 +1,4 @@
+
 .nav
 	position: relative
 	display: flex
@@ -42,69 +43,126 @@
 			font-size: 32px
 			color: #909ea8
 
+@keyframes search-stick-out
+	from
+		top: 30px
+		right: 28px
+
+	to
+		top: 39px
+		right: 19px
+
+@keyframes search-stick-in
+	from
+		top: 39px
+		right: 19px
+		opacity: 1
+
+	to
+		top: 30px
+		right: 28px
+		opacity: 0
+
+@keyframes search-box-open
+	0%
+		width: 20px
+		height: 20px
+
+	99%
+		width: 399px
+
+	100%
+		width: 400px
+		height: 30px
+
+
+
+@keyframes search-box-close
+	from
+		width: 250px
+
+	to
+		width: 100px
+
 @media screen and(min-width: 1000px)
+	.nav-item-search
+		position: relative
+		width: 55%
+		padding: 0
+
+	.nav-search-container
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		position: relative
+		height: 70px
+		width: 300px
+		text-align: center
+
+	.search-icon
+		position: relative
+		width: 20px
+		height: 20px
+		margin-right: 22px
+		border-radius: 30px
+		border: 2px solid #909ea8
+		background: rgba(0,0,0,0.1)
+		z-index: 5
+		overflow: hidden
+		cursor: pointer
+
+
+	.search-stick
+		content: ''
+		position: absolute
+		top: 39px
+		right: 19px
+		width: 2px
+		height: 12px
+		background: #909ea8
+		transform: rotate(315deg)
+		z-index: 1
+		animation: search-stick-out .2s ease forwards
+
 	.nav-search-bar
 		position: relative
 
-		.search-box
-			display: none
-			background: none
-			width: 100px
-			margin-top: 12px
-			color: #fff
-			z-index: 400
+	.search-box
+		background: none
+		width: 80%
+		display: none
+		border: none
+		margin-top: 12px
+		font-size: 16px
+		color: white
+		position: absolute
+		left: 17px
+		z-index: 100
 
-		.icon-search
-			position: absolute
-			left: 15px
-			top: 14px
-			font-size: 22px
-			color: rgba(220, 220, 220, .8)
-			display: none
-			z-index: 100
-
-		.search-label
-			display: none
-			position: absolute
-			top: 14px
-			left: 44px
-			font-size: 17px
-			color: rgba(220, 220, 220, .8)
-			z-index: 50
-
-	.nav-search-container
-		position: relative
-		margin-right: 15px
-
-		.search-icon
-			margin-top: -5px
-			position: relative
-			width: 20px
-			height: 20px
-			border-radius: 30px
-			border: 2px solid #909ea8
-			background: transparent
-			z-index: 30
-			overflow: hidden
-			cursor: pointer
-
-		.search-stick
-			content: ""
-			display: inline-block
-			position: absolute
-			top: 11px
-			right: -1px
-			height: 12px
-			width: 2px
-			background: #909ea8
-			transform: rotate(315deg)
-			z-index: 600
+	.icon-search
+		position: absolute
+		left: 15px
+		top: 14px
+		font-size: 22px
+		color: rgba(220, 220, 220, .8)
+		display: none
+		z-index: 100
 
 	.no-results-message
 		display: none
-		position: relative
-		text-align: center
-		color: #fff
+
+	.search-label
+		display: none
+
+	.search-icon.open
+		animation: search-box-open .2s ease-out .3s forwards 
+
+	.search-stick.slide-in
+		animation: search-stick-in .4s ease forwards
+
+	.search-stick.slide-out
+		animation: search-stick-out .4s ease .4s forwards
+
 
 
 

@@ -1,5 +1,6 @@
 import path from 'path'
 import webpack from 'webpack'
+import SystemBellPlugin from 'system-bell-webpack-plugin'
 
 const TARGET = process.env.npm_lifecycle_event || '';
 const ROOT_PATH = __dirname;
@@ -15,12 +16,11 @@ module.exports = {
 	devtool: 'source-map',
 
 	entry: {
-		index: `${config.paths.public}/main.js`,
-		vendors: [],
+		index: `${config.paths.public}/main.js`
 	},
 
 	output: {
-		path: path.resolve(`${config.paths.dist}`),
+		path: path.resolve(config.paths.dist),
 		publicPath: '/',
 		filename: '[name].js'
 	},
@@ -31,18 +31,19 @@ module.exports = {
 
 	module: {
 		preLoaders: [
-			{
+			/*{
 				test: /\.js$/,
 				loaders: ['isparta'],
 				include: `${config.paths.public}`
-			},
+			}, */
 
 			{
 				test: /\.js$/,
 				loaders: ['eslint'],
-				include: `${conifig.paths.public}`
+				include: `${config.paths.public}`
 			}
-		]
+		],
+
 		loaders: [
 			{
 				test: /\.js$/,
