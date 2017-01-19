@@ -9,10 +9,28 @@
 
 	<div class='nav-right'>
 		<div class='nav-item'>
-			<div class='nav-search'>
-				<span class='icon-search'></span>
+			<div class='nav-search-container'>
+				<div class='nav-search-bar'>
+					<input type='text' name='query' class='search-box' id='nav-autocomplete'>
+					<div class='autocomplete-list'></div>
+					<label class='search-label'>Search</label>
+					<span class='icon-search'></span>
+				</div>
+
+				<div class='search-icon'>
+					<i class='close-search-1'></i>
+					<i class='close-search-2'></i>
+					<div class='close-click-area'></div>
+				</div>
+				<i class='search-stick'></i>
 			</div>
+
+			<section class='nav-seach-results'>
+			</section>
+
+			<p class='no-results-message'>No results</p>
 		</div>
+
 
 		<div class='nav-item'>
 			<div class='menu-icon'>

@@ -42,14 +42,75 @@
 			font-size: 32px
 			color: #909ea8
 
-	.nav-search
-		display: flex
-		align-items: center
-		justify-content: center
-		height: 40px
-		width: 50px
-		cursor: pointer
+@media screen and(min-width: 1000px)
+	.nav-search-bar
+		position: relative
 
-		span
-			font-size: 32px
-			color: #909ea8
+		.search-box
+			display: none
+			background: none
+			width: 100px
+			margin-top: 12px
+			color: #fff
+			z-index: 400
+
+		.icon-search
+			position: absolute
+			left: 15px
+			top: 14px
+			font-size: 22px
+			color: rgba(220, 220, 220, .8)
+			display: none
+			z-index: 100
+
+		.search-label
+			display: none
+			position: absolute
+			top: 14px
+			left: 44px
+			font-size: 17px
+			color: rgba(220, 220, 220, .8)
+			z-index: 50
+
+	.nav-search-container
+		position: relative
+		margin-right: 15px
+
+		.search-icon
+			margin-top: -5px
+			position: relative
+			width: 20px
+			height: 20px
+			border-radius: 30px
+			border: 2px solid #909ea8
+			background: transparent
+			z-index: 30
+			overflow: hidden
+			cursor: pointer
+
+		.search-stick
+			content: ""
+			display: inline-block
+			position: absolute
+			top: 11px
+			right: -1px
+			height: 12px
+			width: 2px
+			background: #909ea8
+			transform: rotate(315deg)
+			z-index: 600
+
+	.no-results-message
+		display: none
+		position: relative
+		text-align: center
+		color: #fff
+
+
+
+@media screen and (min-width: 1600px)
+	.nav-left
+		padding-left: 30px
+
+	.nav-right
+		padding-right: 70px
