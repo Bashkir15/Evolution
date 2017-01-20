@@ -1,9 +1,8 @@
 class offside {
 	constructor(options) {
-		this.overlay = document.querySelector('.sidenav-overlay');
 		this.container = document.querySelector('.sidenav-container');
 		this.closeButton = document.querySelector('.sidenav-close');
-		this.menu = document.querySelector('.sidenav');
+		this.sidenav = document.querySelector('.sidenav');
 
 		this.defaults = {
 			overlay: true,
@@ -22,7 +21,8 @@ class offside {
 
 		this.toggle = this._toggle.bind(this);
 		this.close = this._close.bind(this);
-		this,_applySettings(options);
+		this.open = this._open.bind(this);
+		this._applySettings(options);
 	}
 
 	_applySettings(options) {
@@ -37,10 +37,8 @@ class offside {
 
 
 	_toggle() {
-		this.sidenav.style.willChange = "transform";
-		this.container.classes.add(this.classes.animated);
 
-		if (this.container.classList.container(this.classes.animated) && !this.container.classList.container(this.classes.open)) {
+		if (this.container.classList.contains(this.classes.animated) && !this.container.classList.contains(this.classes.open)) {
 			this.open();
 		} else {
 			this.close();
@@ -50,17 +48,20 @@ class offside {
 	}
 
 	_open(e) {
-		this.sidenav.this.style.willChange = "transform";
+		this.sidenav.style.willChange = "transform";
 		this.container.classList.add(this.classes.animated);
+		this.container.classList.add(this.classes.open);
+		document.body.classList.add(this.classes.open);
 
 		this._addEvents();
-		this.container.classList.add(this.classes.open);
+
 	}
 
-	_close() {
+	_close(e) {
 		this.sidenav.style.willChange = 'transform';
 		this.container.classList.add(this.classes.animated);
 		this.container.classList.remove(this.classes.open);
+		document.body.classList.remove(this.classes.open);
 
 		this._destroyEvents();
 	}
@@ -84,14 +85,12 @@ class offside {
 
 		this.container.addEventListener('transitionend', onTransitionEnd);
 		this.closeButton.addEventListener('click', this.close, false);
-		this.overlay.addEventListener('click', this.close, false);
 		document.addEventListener('keydown', keyHandler, false);
 	}
 
 	_destroyEvents() {
 		let keyHandler = this._keyHandler.bind(this);
 
-		this.overlay.removeEventListener('click', this.close, false);
 		this.closeButton.removeEventListener('click', this.close, false);
 		document.removeEventListener('keydown', keyHandler, false);
 	}

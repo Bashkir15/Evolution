@@ -1,6 +1,8 @@
 import { landing } from './static/scripts/pages/landing'
+import offside from './static/scripts/components/offside'
 
 function init() {
+	var menuTrigger = document.querySelector('.menu-icon');
 	var activeSearch = false;
 	var topSearchBar = false;
 	var searchIcon = document.querySelector('.search-icon');
@@ -9,6 +11,8 @@ function init() {
 	var searchBox = document.querySelector('.search-box');
 	var closeSearch1 = document.querySelector('.close-search-1');
 	var closeSearch2 = document.querySelector('.close-search-2');
+
+	var sidenav = new offside();
 
 
 	searchIcon.addEventListener('click', openSearch, false);
@@ -44,6 +48,8 @@ function init() {
 			searchBox.classList.add('search-open');
 		}, 200);
 	}
+
+	menuTrigger.addEventListener('click', sidenav.open, false);
 
 
 }
