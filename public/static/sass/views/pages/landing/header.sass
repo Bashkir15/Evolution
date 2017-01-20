@@ -172,11 +172,28 @@
 		width: 70px
 		border-radius: 50%
 		margin-right: 10px
+		text-decoration: none
 
 		> img
 			height: 70px
 			width: 70px
 			border-radius: 50%
+
+		p
+			@include lato()
+			font-weight: 300
+			color: #fff
+			font-size: 16px
+			opacity: 0
+			letter-spacing: 1px
+			transform: translateY(20px)
+			transition: all .4s ease-out
+
+		&:hover
+			p
+				transform: translateY(0)
+				opacity: 1
+
 
 
 @media screen and (min-width: 490px)
