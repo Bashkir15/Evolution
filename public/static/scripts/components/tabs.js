@@ -1,20 +1,15 @@
 export function tabs() {
 	var tabWidget = Array.prototype.slice.call(document.querySelectorAll('.js-tab')) || [];
 
-	var tabClickEvent = (tabLink, tabLinks, tabPanels, linkIndex, e) => {
-		let i;
-		let len;
-
-		for (i = 0, len = tabLinks.length - 1; i < tabLinks; i++) {
-			let link = tabLinks[i];
-
+	var tabClickEvent = function (tabLink, tabLinks, tabPanels, linkIndex, e) {
+		tabLinks.forEach((link) => {
 			link.setAttribute('tabindex', '-1');
-			link.setAttribute('aria-selecte', 'false');
+			link.setAttribute('aria-selected', 'false');
 			link.parentNode.removeAttribute('data-tab-active');
 			link.removeAttribute('data-tab-active');
-		}
+		});
 
-		tabLink.setAttribute('tabindex', 0);
+		tabLink.setAttribute('tabindex', '0');
 		tabLink.setAttribute('aria-selected', 'true');
 		tabLink.parentNode.setAttribute('data-tab-active', '');
 		tabLink.setAttribute('data-tab-active', '');
@@ -25,12 +20,12 @@ export function tabs() {
 				panel.removeAttribute('data-tab-active');
 			} else {
 				panel.setAttribute('aria-hidden', 'false');
-				panel.setAttribute('data-tab-active');
+				panel.setAttribute('data-tab-active', '');
 			}
 		});
 	};
 
-	var keyBoardEvent = (tabLink, tabLinks, tabPanels, tabItems, index, e) => {
+	var keyBoardEvent = function (tabLink, tabLinks, tabPanels, tabItems, index, e) {
 		var keyCode = e.key || e.which,
 		currentTab = tabLinks[index],
 		previousTab = tabLinks[index - 1],
@@ -39,7 +34,7 @@ export function tabs() {
 		lastTab = tabLinks[tabLinks.length - 1];
 
 		switch (keyCode) {
-			case "ArrowLeft":
+			case 'ArrowLeft':
 			case 37:
 				e.preventDefault();
 
@@ -48,10 +43,9 @@ export function tabs() {
 				} else {
 					previousTab.focus();
 				}
-
 			break;
 
-			case "ArrowRight":
+			case 'ArrowRight':
 			case 39:
 				e.preventDefault();
 
@@ -60,7 +54,6 @@ export function tabs() {
 				} else {
 					nextTab.focus();
 				}
-
 			break;
 		}
 	};

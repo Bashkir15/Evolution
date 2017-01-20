@@ -1,3 +1,4 @@
+import { landing } from './static/scripts/pages/landing'
 
 function init() {
 	var activeSearch = false;
@@ -43,6 +44,9 @@ function init() {
 			searchBox.classList.add('search-open');
 		}, 200);
 	}
+
+
 }
 
 init();
+landing();
