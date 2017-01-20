@@ -1,9 +1,30 @@
-.tab-panel[aria-hidden="true"]
-	display: none
-
 .js-tab
 	width: 90%
 	margin: 0 auto
 
 .tab-link
 	text-decoration: none
+	outline: none
+
+.tabel-panel[aria-hidden="false"]
+
+.tab-panel[aria-hidden="true"]
+	display: none
+	animation: slide-vanish .2s ease forwards
+
+@keyframes slide-vanish
+	0%
+		display: flex
+		opacity: 1
+		transform: translateX(0)
+
+	50%
+		display: flex
+		opacity: .3
+		transform: translateX(50%)
+
+	100%
+		opacity: 0
+		transform: translateX(200%)
+		display: none
+

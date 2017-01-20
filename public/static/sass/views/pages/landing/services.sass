@@ -126,6 +126,7 @@
 	height: 40px
 	margin-bottom: 60px
 	background: #d3d3d4
+	transition: all .4s ease
 	z-index: 35
 
 	&:before
@@ -138,6 +139,7 @@
 		border-left: 45px solid transparent
 		border-right: 45px solid transparent
 		border-bottom: 25px solid #d3d3d4
+		transition: all .4s ease-out
 
 	&:after
 		content: ''
@@ -149,8 +151,9 @@
 		border-left: 45px solid transparent
 		border-right: 45px solid transparent
 		border-top: 25px solid #d3d3d4
+		transition: all .4s ease-out
 
-	&.selection-hexagon-active
+	&[data-tab-active]
 		background: rgba(0,0,0,0.8)
 
 		&:before
@@ -176,6 +179,7 @@
 	span
 		font-size: 23px
 		color: #d3d3d4
+		transition: color .4s ease-out
 
 .selection-border
 	position: relative
@@ -275,6 +279,10 @@
 			width: 360px
 
 @media screen and (min-width: 1024px)
+	.service-header
+		h2
+			font-size: 34px
+
 	.service-images
 		width: 80%
 		margin: 0 auto
@@ -290,7 +298,59 @@
 				margin-left: 5%
 
 @media screen and (min-width: 1600px)
-	.service-header
-		h2
-			font-size: 40px
-			color: #666
+	.service-header-underline
+		display: flex
+		justify-content: center
+		align-items: center
+		padding-top: 20px
+
+
+		.left-triangle
+			height: 0
+			width: 0
+			border-bottom: 14px solid #d3d3d4
+			border-left: 130px solid transparent
+			margin-right: 5px
+
+		.hex
+			width: 45px
+			height: 20px
+			background: #909ea8
+			position: relative
+
+			&:before
+				content: ''
+				position: absolute
+				top: -8px
+				left: 0
+				width: 0
+				border-left: 22px solid transparent
+				border-right: 22px solid transparent
+				border-bottom: 8px solid #909ea8
+
+			&:after
+				content: ''
+				position: absolute
+				bottom: -8px
+				left: 0
+				width: 0
+				height: 0
+				border-left: 22px solid transparent
+				border-right: 22px solid transparent
+				border-top: 8px solid #909ea8
+
+		.right-triangle
+			height: 0
+			width: 0
+			border-bottom: 14px solid #d3d3d4
+			border-right: 130px solid transparent
+			margin-left: 5px
+
+		.service-header
+			h2
+				font-size: 40px
+				color: #666
+
+		.service-images
+			> div
+				height: 300px

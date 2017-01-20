@@ -43,6 +43,9 @@
 			font-size: 32px
 			color: #909ea8
 
+.nav-search-container
+	display: none
+
 @keyframes search-stick-out
 	from
 		top: 30px
@@ -103,7 +106,11 @@
 		right: 16px
 
 @media screen and(min-width: 1000px)
+	.nav
+		padding: 30px 0
+		
 	.nav-item-search
+		justify-content: flex-end
 		position: relative
 		width: 55%
 		padding: 0
@@ -225,4 +232,4 @@
 		padding-left: 30px
 
 	.nav-right
-		padding-right: 70px
+		padding-right: 40px

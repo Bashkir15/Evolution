@@ -9,6 +9,8 @@ import expressValidator from 'express-validator'
 import expressStatusMonitor from 'express-status-monitor'
 
 import indexRoutes from '../routes/index.server.routes'
+import contactRoutes from '../routes/contact.server.routes'
+import shopRoutes from '../routes/shop.server.routes'
 
 module.exports = () => {
 	const publicPath = path.join(__dirname, '../../public');
@@ -39,6 +41,8 @@ module.exports = () => {
 	app.use(express.static(distPath));
 
 	app.use('/', indexRoutes);
+	app.use('/contact', contactRoutes);
+	app.use('/shop', shopRoutes);
 
 
 	return app;
