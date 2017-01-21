@@ -31,6 +31,7 @@
 		color: #909ea8
 
 	.menu-icon
+		position: relative
 		display: flex
 		align-items: center
 		justify-content: center
@@ -38,6 +39,7 @@
 		width: 50px
 		border-left: 1px solid #909ea8
 		cursor: pointer
+		z-index: 110
 
 		i
 			font-size: 32px
@@ -50,10 +52,12 @@
 	from
 		top: 30px
 		right: 28px
+		opacity: 0
 
 	to
 		top: 39px
 		right: 19px
+		opacity: 1
 
 @keyframes search-stick-in
 	from
@@ -81,11 +85,16 @@
 
 
 @keyframes search-box-close
-	from
+	0%
 		width: 250px
+		height: 30px
 
-	to
-		width: 100px
+	99%
+		width: 21px
+	
+	100%
+		width: 20px
+		height: 20px
 
 @keyframes build-x-one
 	from
@@ -96,6 +105,15 @@
 		top: 6px
 		right: 16px
 
+@keyframes close-x-one
+	from
+		top: 6px
+		right: 16px
+
+	to
+		top: 40px
+		right: 4px
+
 @keyframes build-x-two
 	from
 		top: -20px
@@ -104,6 +122,15 @@
 	to
 		top: 6px
 		right: 16px
+
+@keyframes close-x-two
+	from
+		top: 6px
+		right: 16px
+
+	to
+		top: -20px
+		right: 4px
 
 @media screen and(min-width: 1000px)
 	.nav
@@ -154,11 +181,10 @@
 
 	.search-box
 		background: none
-		width: 278px
+		width: 230px
 		height: 25px
 		margin-top: -12px
 		outline: none
-		display: none
 		border: none
 		font-size: 16px
 		color: white
@@ -177,6 +203,17 @@
 		color: rgba(220, 220, 220, .8)
 		display: none
 		z-index: 100
+
+	.close-click-area
+		position: absolute
+		top: 0
+		right: 0
+		height: 30px
+		width: 50px
+
+		&.clickable
+			z-index: 150
+
 
 	.close-search-1
 		content: ''
@@ -209,6 +246,13 @@
 		animation: build-x-two .2s ease-out .8s forwards
 		display: block
 
+	.close-search-1.slide-out
+		animation: close-x-one .2s ease-out forwards
+
+	.close-search-2.slide-out
+		animation: close-x-two .2s ease-out forwards
+		display: block
+
 	.no-results-message
 		display: none
 
@@ -216,7 +260,13 @@
 		display: none
 
 	.search-icon.open
-		animation: search-box-open .2s ease-out .3s forwards 
+		animation: search-box-open .2s ease-out .3s forwards
+
+		&.search-icon.close
+			animation: search-box-close .2s ease-in .4s forwards
+
+	.search-icon.close
+		animation: search-box-close .2s ease-in .4s forwards
 
 	.search-stick.slide-in
 		animation: search-stick-in .4s ease forwards

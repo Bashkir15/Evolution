@@ -5,7 +5,7 @@ const config = {
 		styles: './public/static/sass/**/*.sass',
 		mainSass: './public/static/sass/main.sass',
 		images: './public/static.images/*.+(png|jpg|gif|svg)',
-		scripts: './dist/main.js'
+		scripts: './dist/index.js'
 	},
 
 	prod: {
