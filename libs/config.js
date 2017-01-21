@@ -4,7 +4,7 @@ const config = {
 		views: './public/**/*.ejs',
 		styles: './public/static/sass/**/*.sass',
 		mainSass: './public/static/sass/main.sass',
-		images: './public/static.images/*.+(png|jpg|gif|svg)',
+		images: './public/static/images/*.+(png|jpg|gif|svg)',
 		scripts: './dist/index.js'
 	},
 

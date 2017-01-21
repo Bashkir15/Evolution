@@ -4,19 +4,21 @@ import config from '../config'
 
 import { processStyles } from './styles'
 import { processScripts } from './scripts'
+import { optimizeImages } from './images'
 import { serve } from './serve'
 import { watch } from './watch'
 
 gulp.task('styles', processStyles);
 gulp.task('scripts', processScripts);
+gulp.task('images', optimizeImages);
 
 gulp.task(serve);
 gulp.task(watch);
 
 const stylesTask = gulp.task('styles');
 const scriptsTask = gulp.task('scripts');
-
+const imageTask = gulp.task('images');
 
 gulp.task('default',
-	gulp.series('scripts', 'styles', serve, watch)
+	gulp.series('scripts', 'styles', 'images', serve, watch)
 );
