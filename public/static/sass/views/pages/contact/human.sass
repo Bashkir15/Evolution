@@ -1,0 +1,39 @@
+.contact-human
+	display: flex
+	flex-direction: column
+	padding: 50px 0
+	border-bottom: 1px solid rgba(0,0,0,0.23)
+
+	h2
+		@include lato()
+		font-weight: 400
+		font-size: 35px
+		letter-spacing: 3px
+		margin-left: 10px
+		margin-bottom: 20px
+
+	p
+		@include lato()
+		font-weight: 300
+		font-size: 16px
+		line-height: 27px
+		letter-spacing: 1px
+		margin-left: 20px
+		margin-bottom: 20px
+
+@media screen and (min-width: 600px)
+	.contact-human
+		padding: 75px 0
+
+		h2
+			margin-left: 36px
+
+		p
+			margin-left: 35px
+			margin-bottom: 32px
+
+@media screen and (min-width: 820px)
+	.contact-human
+		p
+			line-height: 35px
+			width: 85%

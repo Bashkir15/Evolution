@@ -10,7 +10,87 @@
 	</head>
 
 	<body>
-		<% include ./views/shared/nav %>
+		<% include ../shared/nav %>
+		<% include ../shared/offside %>
+
+		<main class='contact-page-container'>
+			<header class='contact-header'>
+				<h1>We want to hear from you</h1>
+			</header>
+
+			<section class='contact-human'>
+				<h2>Talk to a human</h2>
+				<p>Tired of wasting your time dealing with automated messages? At Evolution we make it our priority to make sure there is a human ready to assist you at all times and to guarentee your emails won't just get lost somewhere in an inbox, never to be seen again</p>
+			</section>
+
+			<section class='contact-locations'>
+				<h2>How do you get a hold of us?</h2>
+				<p>Just checkout our locations below for each of their unique information</p>
+
+				<div class='location-wrapper'>
+					<div class='location'>
+						<div class='location-overlay'></div>
+					</div>
+
+					<div class='location'>
+						<div class='location-overlay'></div>
+					</div>
+
+					<div class='location'>
+						<div class='location-overlay'></div>
+					</div>
+
+					<div class='location'>
+						<div class='location-overlay'></div>
+					</div>
+
+					<div class='location'>
+						<div class='location-overlay'></div>
+					</div>
+				</div>
+			</section>
+
+			<section class='contact-form-container'>
+				<p>If you don't feel like calling or coming in, you can always shoot us a direct message with the form below</p>
+
+				<form name='contact-form' class='contact-form'>
+					<div class='form-wrapper'>
+						<input type='text' name='name' id='contact-name'>
+						<label for='contact-name'>Name</label>
+					</div>
+
+					<div class='form-wrapper form-email-wrapper'>
+						<input type='email' name='email' id='contact-email'>
+						<label for='contact-email'>Email</label>
+					</div>
+
+					<div class='form-wrapper'>
+						<input type='text' name='subject' id='contact-subject'>
+						<label for='contact-subject'>Subject</label>
+					</div>
+
+					<div class='form-wrapper form-phone-wrapper'>
+						<input type='phone' name='phone' id='contact-phone'>
+						<label for='contact-phone'>Phone</label>
+					</div>
+
+					<div class='form-wrapper'>
+						<textarea rows='10' id='contact-message'></textarea>		
+						<label for='contact-message'>Message</label>
+					</div>
+
+					<div class='form-submit'>
+						<button type='button' id='contact-submit' aria-label='submit the message form'>
+							<span>Deliver</span>
+						</button>
+					</div>
+				</form>
+			</section>
+
+			<section class='contact-maps'>
+				<h2>Here we will put google maps with a pin for each location</h2>
+			</section>
+		</main>
 
 		<script src='../index.js'></script>
 	</body>

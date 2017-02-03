@@ -1,0 +1,63 @@
+.contact-locations
+	padding: 50px 0
+	border-bottom: 1px solid rgba(0,0,0,0.23)
+
+	h2
+		@include lato()
+		font-weight: 300
+		font-size: 32px
+		letter-spacing: 4px
+		margin-left: 10px
+		margin-bottom: 20px
+
+	p
+		@include lato()
+		font-weight: 300
+		font-size: 16px
+		line-height: 24px
+		letter-spacing: 2px
+		margin-left: 15px
+		margin-bottom: 25px
+
+.location
+	position: relative
+	height: 220px
+	width: 85%
+	margin: 0 auto 30px auto
+	background: rgba(0,0,0,0.23)
+
+@media screen and (min-width: 600px)
+	.contact-locations
+		padding: 75px 0
+
+		h2
+			margin-left: 36px
+
+		p
+			margin-left: 35px
+
+	.location
+		width: 80%
+		height: 275px
+
+@media screen and (min-width: 820px)
+	.contact-locations
+		h2
+			font-size: 36px
+
+		p
+			font-size: 17px
+
+	.location-wrapper
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		width: 90%
+		margin: 0 auto
+
+	.location
+		width: 50%
+		margin-bottom: 0
+		border: 1px solid rgba(0,0,0,0.4)
+
+

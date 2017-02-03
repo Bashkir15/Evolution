@@ -1,0 +1,79 @@
+.contact-form-container
+	padding: 50px 0
+
+	p
+		@include lato()
+		font-weight: 300
+		font-size: 17px
+		letter-spacing: 2px
+		line-height: 24px
+		margin-left: 15px
+
+.contact-form
+	width: 90%
+	margin: 65px auto 0 auto
+
+.form-wrapper
+	position: relative
+	width: 100%
+	margin-bottom: 42px
+
+	input
+		position: relative
+		height: 40px
+		width: 100%
+		padding: 0
+		border: none
+		border-bottom: 1px solid rgba(0,0,0,0.23)
+		@include lato()
+		font-weight: 300
+		letter-spacing: 2px
+		font-size: 17px
+		outline: none
+
+	label
+		position: absolute
+		top: 13px
+		left: 16px
+		@include lato()
+		font-weight: 300
+		font-size: 17px
+		letter-spacing: 2px
+
+	textarea
+		position: relative
+		width: 100%
+		@include lato()
+		font-weight: 300
+		letter-spacing: 2px
+		font-size: 17px
+		border: 1px solid rgba(0,0,0,0.23)
+		outline: none
+
+.form-submit
+	display: flex
+	align-items: center
+	justify-content: center
+	padding: 20px 0
+
+	button
+		height: 40px
+		width: 180px
+		background: none
+		background: #ccc
+
+		span
+			@include lato()
+			font-weight: 300
+			letter-spacing: 2px
+			font-size: 16px
+			text-transform: uppercase
+
+@media screen and (min-width: 600px)
+	.contact-form-container
+		padding: 75px 0
+
+		p
+			text-align: center
+			line-height: 32px
+
