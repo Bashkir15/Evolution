@@ -12,18 +12,19 @@
 .about-media-text
 	padding: 10px
 	margin-bottom: 40px
+	padding: 15px 20px
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.23)
 
 	h3
 		@include lato()
-		font-weight: 300
+		font-weight: 400
 		letter-spacing: 2px
-		font-size: 16px
+		font-size: 20px
 		margin-bottom: 15px
 
 	p
-		@include open()
-		font-weight: 400
+		@include lato()
+		font-weight: 300
 		font-size: 15px
 		letter-spacing: 2px
 		line-height: 25px
@@ -89,6 +90,15 @@
 	.about-media-text
 		margin-bottom: 85px
 
+		h3
+			font-size: 22px
+			letter-spacing: 4px
+
+		p
+			font-size: 16px
+
+
+
 	.media-play-button
 		> div
 			height: 95px
@@ -107,6 +117,16 @@
 	.about-media-text
 		flex-basis: 45%
 		height: 500px
+
+		h3
+			&:nth-of-type(1)
+				margin-top: 15px
+
+		p
+			line-height: 29px
+			
+			&:nth-of-type(1)
+				margin-bottom: 50px
 
 	.about-media-video
 		flex-basis: 48%

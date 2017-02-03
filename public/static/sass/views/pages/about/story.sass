@@ -18,24 +18,25 @@
 
 	h2
 		@include open()
-		font-weight: 400
+		font-weight: 600
+		text-transform: uppercase
 		font-size: 30px
-		letter-spacing: 2px
+		letter-spacing: 6px
 		margin: 20px 0
 
 .about-story-text
-	padding-top: 40px
-	width: 90%
+	padding-top: 65px
+	width: 80%
 	margin: 0 auto
 	text-align: center
 
 	blockquote
-		@include open()
+		@include lato()
 		font-weight: 400
 		font-size: 17px
 		letter-spacing: 2px
 		line-height: 30px
-		margin-bottom: 35px
+		margin-bottom: 55px
 
 	p
 		@include lato()
@@ -58,9 +59,17 @@
 		blockquote
 			line-height: 35px
 
+		p
+			width: 85%
+			margin: 0 auto
+
 @media screen and (min-width: 870px)
 	.about-story
 		padding: 80px 0
+
+	.about-story-title
+		> div
+			width: 40%
 
 	.about-story-text
 		width: 80%
@@ -70,5 +79,17 @@
 	.about-story
 		padding: 120px 0
 
+	.about-story-title
+		width: 35%
+
 	.about-story-text
 		width: 65%
+
+@media screen and (min-width: 1350px)
+	.about-story-text
+		blockquote
+			margin-bottom: 70px
+			font-size: 18px
+
+		p
+			line-height: 32px

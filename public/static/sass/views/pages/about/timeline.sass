@@ -79,3 +79,95 @@
 		.timeline-widget
 			width: 55%
 			height: 370px
+
+@media screen and (min-width: 1350px)
+	.about-timeline-small
+		display: none
+
+	.about-timeline-large
+		display: flex
+		flex-direction: column
+		align-items: center
+		width: 90%
+		margin: 0 auto
+
+	.about-timeline-row-left
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		width: 100%
+
+		> div
+			display: flex
+			width: 50%
+			align-items: center
+
+		.timeline-widget
+			height: 250px
+			width: 48%
+			background: rgba(0,0,0,0.23)
+
+		.timeline-horizontal-line
+			width: calc(36% + 50px)
+			border-bottom: 1px solid rgba(0,0,0,0.12)
+
+		.timeline-marker
+			position: absolute
+			top: 50%
+			right: 50%
+			height: 100px
+			width: 100px
+			overflow: hidden
+			border-radius: 50%
+			background: #666
+			transform: translate3D(50%, -50%, 0)
+			z-index: 2
+
+		.timeline-vertical-line
+			position: absolute
+			top: 50%
+			left: 0
+			width: 100%
+			height: 1px
+			border-top: 1px solid rgba(0,0,0,0.12)
+			transform: rotate(90deg) translateX(50%)
+			z-index: 1
+
+
+	.about-timeline-row-right
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		width: 100%
+
+		> div
+			display: flex
+			width: 50%
+			align-items: center
+
+		.timeline-widget
+			height: 250px
+			width: 48%
+			background: rgba(0,0,0,0.23)
+
+		.timeline-marker
+			position: absolute
+			top: 50%
+			right: 50%
+			height: 100px
+			width: 100px
+			overflow: hidden
+			border-radius: 50%
+			background: #666
+			transform: translate3D(50%, -50%, 0)
+			z-index: 2
+
+		.timeline-horizontal-line
+			width: calc(36% + 50px)
+			border-bottom: 1px solid rgba(0,0,0,0.12)
+
+
+
+
