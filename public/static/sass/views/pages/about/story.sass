@@ -1,0 +1,59 @@
+.about-story
+	display: flex
+	flex-direction: column
+	align-items: center
+	padding: 45px 0
+	border-bottom: 1px solid rgba(0,0,0,0.12)
+
+.about-story-title
+	display: flex
+	flex-direction: column
+	align-items: center
+	width: 100%
+
+	> div
+		width: 50%
+		height: 0
+		border-top: 2px solid rgba(0,0,0,0.12)
+
+	h2
+		@include open()
+		font-weight: 400
+		font-size: 30px
+		letter-spacing: 2px
+		margin: 20px 0
+
+.about-story-text
+	padding-top: 40px
+	width: 90%
+	margin: 0 auto
+	text-align: center
+
+	blockquote
+		@include open()
+		font-weight: 400
+		font-size: 17px
+		letter-spacing: 2px
+		line-height: 30px
+		margin-bottom: 35px
+
+	p
+		@include lato()
+		font-weight: 300
+		font-size: 16px
+		letter-spacing: 2px
+		line-height: 28px
+
+	a
+		text-decoration: none
+
+@media screen and (min-width: 640px)
+	.about-story
+		padding: 65px 0
+		
+	.about-story-text
+		padding-top: 65px
+		width: 80%
+
+		blockquote
+			line-height: 35px

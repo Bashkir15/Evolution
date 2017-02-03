@@ -1,0 +1,56 @@
+.about-today
+	padding: 50px 0
+
+	h2
+		@include lato()
+		font-weight: 300
+		font-size: 36px
+		letter-spacing: 4px
+		margin-left: 15px
+
+.about-today-staff
+	display: flex
+	flex-direction: column
+	align-items: center
+	padding: 30px 0
+
+
+.staff
+	display: flex
+	flex-direction: column
+	text-align: left
+	width: 90%
+	margin: 0 auto 45px auto
+
+	h4
+		@include lato()
+		font-weight: 400
+		font-size: 22px
+		letter-spacing: 2px
+		margin-bottom: 10px
+
+	p
+		@include lato()
+		font-weight: 300
+		font-size: 17px
+		letter-spacing: 1px
+
+.staff-image
+	height: 200px
+	width: 100%
+	margin-bottom: 25px
+	background: rgba(0,0,0,0.4)
+
+@media screen and (min-width: 640px)
+	.about-today
+		padding: 80px 0
+
+	.about-today-staff
+		padding: 70px 0
+
+	.staff
+		width: 80%
+		margin: 0 auto 80px auto
+
+	.staff-image
+		height: 260px

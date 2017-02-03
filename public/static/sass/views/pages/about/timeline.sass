@@ -1,0 +1,54 @@
+.about-timeline
+	padding: 50px 0
+	border-bottom: 1px solid rgba(0,0,0,0.12)
+
+.about-timeline-large
+	display: none
+
+.about-timeline-small
+	display: flex
+	flex-direction: column
+	align-items: center
+	width: 100%
+
+	> div
+		display: flex
+		flex-direction: column
+		align-items: center
+		width: 100%
+
+	.timeline-marker
+		height: 75px
+		width: 75px
+		border-radius: 50%
+		background: rgba(0,0,0,0.12)
+
+	.timeline-vertical-line
+		height: 50px
+		border-right: 1px solid rgba(0,0,0,0.3)
+
+		&.last
+			height: 0
+			border: none
+
+	.timeline-widget
+		height:  230px
+		width: 85%
+		margin: 0 auto
+		background: rgba(0,0,0,0.4)
+
+@media screen and (min-width: 640px)
+	.about-timeline
+		padding: 80px 0
+
+	.about-timeline-small
+		.timeline-marker
+			height: 90px
+			width: 90px
+
+		.timeline-vertical-line
+			height: 75px
+
+		.timeline-widget
+			width: 75%
+			height: 280px
