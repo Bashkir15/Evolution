@@ -48,7 +48,7 @@
 	
 	var _landing = __webpack_require__(1);
 	
-	var _offside = __webpack_require__(3);
+	var _offside = __webpack_require__(4);
 	
 	var _offside2 = _interopRequireDefault(_offside);
 	
@@ -167,7 +167,7 @@
 	
 	var _tabs = __webpack_require__(2);
 	
-	var _notifications = __webpack_require__(4);
+	var _notifications = __webpack_require__(3);
 	
 	var _notifications2 = _interopRequireDefault(_notifications);
 	
@@ -351,132 +351,6 @@
 
 /***/ },
 /* 3 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var offside = function () {
-		function offside(options) {
-			_classCallCheck(this, offside);
-	
-			this.container = document.querySelector('.sidenav-container');
-			this.closeButton = document.querySelector('.sidenav-close');
-			this.sidenav = document.querySelector('.sidenav');
-	
-			this.defaults = {
-				overlay: true,
-				push: true,
-				closeButton: true
-			};
-	
-			this.classes = {
-				open: 'sidenav-open',
-				animated: 'sidenav-animating'
-			};
-	
-			this.keycodes = {
-				escape: 27
-			};
-	
-			this.toggle = this._toggle.bind(this);
-			this.close = this._close.bind(this);
-			this.open = this._open.bind(this);
-			this._applySettings(options);
-		}
-	
-		_createClass(offside, [{
-			key: '_applySettings',
-			value: function _applySettings(options) {
-				if ((typeof options === 'undefined' ? 'undefined' : _typeof(options)) == 'object') {
-					for (var i in options) {
-						if (options.hasOwnProperty(i)) {
-							this.defaults[i] = options[i];
-						}
-					}
-				}
-			}
-		}, {
-			key: '_toggle',
-			value: function _toggle() {
-	
-				if (this.container.classList.contains(this.classes.animated) && !this.container.classList.contains(this.classes.open)) {
-					this.open();
-				} else {
-					this.close();
-				}
-	
-				this.sidenav.style.willChange = 'auto';
-			}
-		}, {
-			key: '_open',
-			value: function _open(e) {
-				this.sidenav.style.willChange = "transform";
-				this.container.classList.add(this.classes.animated);
-				this.container.classList.add(this.classes.open);
-				document.body.classList.add(this.classes.open);
-	
-				this._addEvents();
-			}
-		}, {
-			key: '_close',
-			value: function _close(e) {
-				this.sidenav.style.willChange = 'transform';
-				this.container.classList.add(this.classes.animated);
-				this.container.classList.remove(this.classes.open);
-				document.body.classList.remove(this.classes.open);
-	
-				this._destroyEvents();
-			}
-		}, {
-			key: '_keyHandler',
-			value: function _keyHandler(e) {
-				if (e.which == this.keycodes.escape) {
-					e.preventDefault();
-					this.close();
-				}
-			}
-		}, {
-			key: '_onTransitionEnd',
-			value: function _onTransitionEnd() {
-				this.container.classList.remove(this.classes.animated);
-			}
-		}, {
-			key: '_addEvents',
-			value: function _addEvents() {
-				var onTransitionEnd = this._onTransitionEnd.bind(this);
-				var keyHandler = this._keyHandler.bind(this);
-	
-				this.container.addEventListener('transitionend', onTransitionEnd);
-				this.closeButton.addEventListener('click', this.close, false);
-				document.addEventListener('keydown', keyHandler, false);
-			}
-		}, {
-			key: '_destroyEvents',
-			value: function _destroyEvents() {
-				var keyHandler = this._keyHandler.bind(this);
-	
-				this.closeButton.removeEventListener('click', this.close, false);
-				document.removeEventListener('keydown', keyHandler, false);
-			}
-		}]);
-	
-		return offside;
-	}();
-	
-	exports.default = offside;
-
-/***/ },
-/* 4 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -796,6 +670,132 @@
 	}();
 	
 	exports.default = notifications;
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var offside = function () {
+		function offside(options) {
+			_classCallCheck(this, offside);
+	
+			this.container = document.querySelector('.sidenav-container');
+			this.closeButton = document.querySelector('.sidenav-close');
+			this.sidenav = document.querySelector('.sidenav');
+	
+			this.defaults = {
+				overlay: true,
+				push: true,
+				closeButton: true
+			};
+	
+			this.classes = {
+				open: 'sidenav-open',
+				animated: 'sidenav-animating'
+			};
+	
+			this.keycodes = {
+				escape: 27
+			};
+	
+			this.toggle = this._toggle.bind(this);
+			this.close = this._close.bind(this);
+			this.open = this._open.bind(this);
+			this._applySettings(options);
+		}
+	
+		_createClass(offside, [{
+			key: '_applySettings',
+			value: function _applySettings(options) {
+				if ((typeof options === 'undefined' ? 'undefined' : _typeof(options)) == 'object') {
+					for (var i in options) {
+						if (options.hasOwnProperty(i)) {
+							this.defaults[i] = options[i];
+						}
+					}
+				}
+			}
+		}, {
+			key: '_toggle',
+			value: function _toggle() {
+	
+				if (this.container.classList.contains(this.classes.animated) && !this.container.classList.contains(this.classes.open)) {
+					this.open();
+				} else {
+					this.close();
+				}
+	
+				this.sidenav.style.willChange = 'auto';
+			}
+		}, {
+			key: '_open',
+			value: function _open(e) {
+				this.sidenav.style.willChange = "transform";
+				this.container.classList.add(this.classes.animated);
+				this.container.classList.add(this.classes.open);
+				document.body.classList.add(this.classes.open);
+	
+				this._addEvents();
+			}
+		}, {
+			key: '_close',
+			value: function _close(e) {
+				this.sidenav.style.willChange = 'transform';
+				this.container.classList.add(this.classes.animated);
+				this.container.classList.remove(this.classes.open);
+				document.body.classList.remove(this.classes.open);
+	
+				this._destroyEvents();
+			}
+		}, {
+			key: '_keyHandler',
+			value: function _keyHandler(e) {
+				if (e.which == this.keycodes.escape) {
+					e.preventDefault();
+					this.close();
+				}
+			}
+		}, {
+			key: '_onTransitionEnd',
+			value: function _onTransitionEnd() {
+				this.container.classList.remove(this.classes.animated);
+			}
+		}, {
+			key: '_addEvents',
+			value: function _addEvents() {
+				var onTransitionEnd = this._onTransitionEnd.bind(this);
+				var keyHandler = this._keyHandler.bind(this);
+	
+				this.container.addEventListener('transitionend', onTransitionEnd);
+				this.closeButton.addEventListener('click', this.close, false);
+				document.addEventListener('keydown', keyHandler, false);
+			}
+		}, {
+			key: '_destroyEvents',
+			value: function _destroyEvents() {
+				var keyHandler = this._keyHandler.bind(this);
+	
+				this.closeButton.removeEventListener('click', this.close, false);
+				document.removeEventListener('keydown', keyHandler, false);
+			}
+		}]);
+	
+		return offside;
+	}();
+	
+	exports.default = offside;
 
 /***/ }
 /******/ ]);

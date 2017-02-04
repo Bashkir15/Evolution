@@ -5,7 +5,7 @@
 		<meta name='viewport' content="width=device-width, initial-scale=1, maximum-scale=1">
 
 		<link rel='stylesheet' href='../static/icons/style.css'>
-		<link href="https://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans:400,600" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans:100,400,600" rel="stylesheet">
 		<link rel='stylesheet' href='../styles/main.min.css'>
 	</head>
 
@@ -15,7 +15,10 @@
 
 		<main class='contact-page-container'>
 			<header class='contact-header'>
-				<h1>We want to hear from you</h1>
+				<img src='../static/images/contact-header.jpg'>
+				<div class='contact-header-overlay'>
+					<h1>We want to hear from you</h1>
+				</div>
 			</header>
 
 			<section class='contact-human'>
@@ -28,25 +31,40 @@
 				<p>Just checkout our locations below for each of their unique information</p>
 
 				<div class='location-wrapper'>
-					<div class='location'>
-						<div class='location-overlay'></div>
-					</div>
+					<figure class='contact-location'>
+						<img src='../static/images/store1.png' alt='location 1 image'>
+						<div class='location-overlay'>
+							<h3>Location 1</h3>
+						</div>
+					</figure>
 
-					<div class='location'>
-						<div class='location-overlay'></div>
-					</div>
+					<figure class='contact-location'>
+						<img src='../static/images/store2.png' alt='location 2 image'>
+						<div class='location-overlay'>
+							<h3>Location 2</h3>
+						</div>
+					</figure>
 
-					<div class='location'>
-						<div class='location-overlay'></div>
-					</div>
+					<figure class='contact-location'>
+						<img src='../static/images/store3.png' alt='location 3 image'>
+						<div class='location-overlay'>
+							<h3>Location 3</h3>
+						</div>
+					</figure>
 
-					<div class='location'>
-						<div class='location-overlay'></div>
-					</div>
+					<figure class='contact-location'>
+						<img src='../static/images/store4.png' alt='location 4 image'>
+						<div class='location-overlay'>
+							<h3>Location 4</h3>
+						</div>
+					</figure>
 
-					<div class='location'>
-						<div class='location-overlay'></div>
-					</div>
+					<figure class='contact-location'>
+						<img src='../static/images/store5.png' alt='location 5 image'>
+						<div class='location-overlay'>
+							<h3>Location 5</h3>
+						</div>
+					</figure>
 				</div>
 			</section>
 
@@ -56,12 +74,14 @@
 				<form name='contact-form' class='contact-form'>
 					<div class='form-wrapper'>
 						<input type='text' name='name' id='contact-name'>
-						<label for='contact-name'>Name</label>
+						<label for='contact-name'>Name<span class='req'>*</span>
+						</label>
 					</div>
 
 					<div class='form-wrapper form-email-wrapper'>
 						<input type='email' name='email' id='contact-email'>
-						<label for='contact-email'>Email</label>
+						<label for='contact-email'>Email<span class='req'>*</span>
+						</label>
 					</div>
 
 					<div class='form-wrapper'>
@@ -76,7 +96,8 @@
 
 					<div class='form-wrapper'>
 						<textarea rows='10' id='contact-message'></textarea>		
-						<label for='contact-message'>Message</label>
+						<label for='contact-message'>Message<span class='req'>*</span>
+						</label>
 					</div>
 
 					<div class='form-submit'>
@@ -88,7 +109,7 @@
 			</section>
 
 			<section class='contact-maps'>
-				<h2>Here we will put google maps with a pin for each location</h2>
+				<img src='../static/images/map.png' alt='store location map'>
 			</section>
 		</main>
 

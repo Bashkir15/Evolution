@@ -1,7 +1,6 @@
 .contact-locations
 	padding: 50px 0
 	border-bottom: 1px solid rgba(0,0,0,0.23)
-
 	h2
 		@include lato()
 		font-weight: 300
@@ -19,12 +18,35 @@
 		margin-left: 15px
 		margin-bottom: 25px
 
-.location
+.contact-location
 	position: relative
 	height: 220px
 	width: 85%
 	margin: 0 auto 30px auto
 	background: rgba(0,0,0,0.23)
+
+	img
+		height: 100%
+		width: 100%
+		max-width: 100%
+
+.location-overlay
+	display: flex
+	align-items: center
+	justify-content: center
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background: rgba(0,0,0,0.3)
+
+	h3
+		@include lato()
+		font-weight: 300
+		font-size: 22px
+		letter-spacing: 2px
+		color: #fff
 
 @media screen and (min-width: 600px)
 	.contact-locations
@@ -36,7 +58,7 @@
 		p
 			margin-left: 35px
 
-	.location
+	.contact-location
 		width: 80%
 		height: 275px
 
@@ -55,7 +77,7 @@
 		width: 90%
 		margin: 0 auto
 
-	.location
+	.contact-location
 		width: 50%
 		margin-bottom: 0
 		border: 1px solid rgba(0,0,0,0.4)
