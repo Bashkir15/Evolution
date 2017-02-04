@@ -41,7 +41,6 @@
 		justify-content: center
 		height: 40px
 		width: 50px
-		//border-left: 1px solid #909ea8
 		cursor: pointer
 		z-index: 110
 
@@ -58,6 +57,10 @@
 @media screen and(min-width: 1000px)
 	.nav
 		padding: 30px 0
+
+	.nav-item
+		.menu-icon
+			border-left: 1px solid #909ea8
 		
 	.nav-item-search
 		justify-content: flex-end
@@ -112,11 +115,13 @@
 		font-size: 16px
 		color: white
 		position: absolute
+		pointer-events: none
 		left: 17px
 		z-index: 100
 
 		&.search-open
 			display: block
+			pointer-events: auto
 
 	.icon-search
 		position: absolute
