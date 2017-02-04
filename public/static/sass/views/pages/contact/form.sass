@@ -22,6 +22,9 @@
 	width: 100%
 	margin-bottom: 62px
 
+	&:nth-of-type(4)
+		margin-bottom: 82px
+
 	input
 		position: relative
 		height: 40px
@@ -33,6 +36,8 @@
 		font-weight: 300
 		letter-spacing: 2px
 		font-size: 17px
+		color: #fff
+		padding-left: 15px
 		background: transparent
 		outline: none
 
@@ -40,6 +45,11 @@
 			& ~ .bar:before,
 			& ~ .bar:after
 				width: 50%
+
+			& ~ label
+				transform: translateY(-30px)
+				font-size: 14px
+				color: #1aba88
 
 	label
 		position: absolute
@@ -79,13 +89,25 @@
 	textarea
 		position: relative
 		width: 100%
+		padding-top: 13px
+		padding-left: 16px
 		@include lato()
 		font-weight: 300
 		letter-spacing: 2px
 		font-size: 17px
+		color: #fff
 		border: 1px solid #a0b3b0
 		background: transparent
 		outline: none
+		transition: all .4s ease
+
+		&:focus
+			border-color: #1aba88
+
+			& ~ label
+				transform: translateY(-38px)
+				font-size: 14px
+				color: #1aba88
 
 
 .form-submit
