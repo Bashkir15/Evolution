@@ -48,6 +48,7 @@
 		left: 0
 		height: 100%
 		width: 100%
+		overflow: hidden
 		padding-top: 25%
 
 		&:before
@@ -112,11 +113,12 @@
 	.contact-locations
 		padding: 115px 0
 
-		h2
+		> h2
 			font-size: 36px
 
-		p
+		> p
 			font-size: 16px
+			line-height: 36px
 
 	.contact-location
 		width: 80%
@@ -125,8 +127,10 @@
 @media screen and (min-width: 820px)
 	.contact-locations
 
-		p
+		> p
 			font-size: 17px
+			width: 80%
+			line-height: 40px
 
 	.location-wrapper
 		display: flex
@@ -144,11 +148,12 @@
 
 @media screen and (min-width: 1000px)
 	.contact-locations
-		h2
+		> h2
 			font-size: 38px
+			margin-bottom: 73px
 
-		p
-			font-size: 18px
+		> p
+			font-size: 19px
 
 	.contact-location
 		figcaption
@@ -166,11 +171,13 @@
 	.contact-locations
 		padding: 135px 0
 
-		h2
+		> h2
 			font-size: 40px
 
-		p
+		> p
 			font-size: 19px
+			line-height: 44px
+			width: 70%
 
 	.contact-location
 		width: 33.3333333%
@@ -185,5 +192,50 @@
 			figcaption
 				padding-top: 23%
 
+@media screen and (min-width: 1400px)
+	.contact-locations
+		padding: 150px 0
+
+		> h2
+			font-size: 42px
+
+		> p
+			width: 55%
+			font-size: 20px
+			line-height: 50px
+
+	.contact-location
+		figcaption
+			padding-top: 30%
+
+		&:nth-of-type(4),
+		&:nth-of-type(5)
+			figcaption
+				padding-top: 20%
+
+@media screen and (min-width: 1600px)
+	.contact-locations
+		padding: 185px 0
+
+		> h2
+			font-size: 45px
+			margin-bottom: 82px
+
+
+	.location-wrapper
+		padding-top: 145px
+
+	.contact-location
+		width: 25%
+
+		figcaption
+			padding-top: 32%
+
+		&:nth-of-type(4),
+		&:nth-of-type(5)
+			width: 25%
+
+			figcaption
+				padding-top: 32%
 
 
