@@ -124,8 +124,6 @@
 
 @media screen and (min-width: 820px)
 	.contact-locations
-		h2
-			font-size: 36px
 
 		p
 			font-size: 17px
@@ -140,6 +138,52 @@
 	.contact-location
 		width: 50%
 		margin-bottom: 0
-		border: 1px solid rgba(0,0,0,0.4)
+
+		figcaption
+			padding-top: 30%
+
+@media screen and (min-width: 1000px)
+	.contact-locations
+		h2
+			font-size: 38px
+
+		p
+			font-size: 18px
+
+	.contact-location
+		figcaption
+			padding-top: 28%
+
+			div
+				margin-top: -40px
+
+		&:hover
+			figcaption
+				h2
+					transform: scale(0.9) translateY(-75px)
+
+@media screen and (min-width: 1200px)
+	.contact-locations
+		padding: 135px 0
+
+		h2
+			font-size: 40px
+
+		p
+			font-size: 19px
+
+	.contact-location
+		width: 33.3333333%
+
+		figcaption
+			padding-top: 33%
+
+		&:nth-of-type(4),
+		&:nth-of-type(5)
+			width: 50%
+
+			figcaption
+				padding-top: 23%
+
 
 
