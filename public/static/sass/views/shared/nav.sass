@@ -6,6 +6,10 @@
 	height: 70px
 	z-index: 50
 
+	&:not(.landing-nav)
+		padding: 30px 0
+		background: #fff
+
 .nav-left
 	display: flex
 	flex: 1
@@ -37,7 +41,7 @@
 		justify-content: center
 		height: 40px
 		width: 50px
-		border-left: 1px solid #909ea8
+		//border-left: 1px solid #909ea8
 		cursor: pointer
 		z-index: 110
 
@@ -50,90 +54,6 @@
 
 .no-results-message
 	display: none
-
-@keyframes search-stick-out
-	from
-		top: 30px
-		right: 28px
-		opacity: 0
-
-	to
-		top: 39px
-		right: 19px
-		opacity: 1
-
-@keyframes search-stick-in
-	from
-		top: 39px
-		right: 19px
-		opacity: 1
-
-	to
-		top: 30px
-		right: 28px
-		opacity: 0
-
-@keyframes search-box-open
-	0%
-		width: 20px
-		height: 20px
-
-	99%
-		width: 399px
-
-	100%
-		width: 400px
-		height: 30px
-
-
-
-@keyframes search-box-close
-	0%
-		width: 250px
-		height: 30px
-
-	99%
-		width: 21px
-	
-	100%
-		width: 20px
-		height: 20px
-
-@keyframes build-x-one
-	from
-		top: 40px
-		right: 4px
-
-	to
-		top: 6px
-		right: 16px
-
-@keyframes close-x-one
-	from
-		top: 6px
-		right: 16px
-
-	to
-		top: 40px
-		right: 4px
-
-@keyframes build-x-two
-	from
-		top: -20px
-		right: 4px
-
-	to
-		top: 6px
-		right: 16px
-
-@keyframes close-x-two
-	from
-		top: 6px
-		right: 16px
-
-	to
-		top: -20px
-		right: 4px
 
 @media screen and(min-width: 1000px)
 	.nav

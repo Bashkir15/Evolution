@@ -67,14 +67,6 @@
 		var closeClickArea = document.querySelector('.close-click-area');
 		var searchResults = document.querySelector('.search-results-list');
 	
-		var searchOptions = [{
-			title: 'This is a test title',
-			description: 'This is a test description of the product'
-		}, {
-			title: 'This is a test title',
-			description: "This is a test description"
-		}];
-	
 		var sidenav = new _offside2.default();
 	
 		searchIcon.addEventListener('click', openSearch, false);
@@ -147,12 +139,15 @@
 			}, 200);
 		}
 	
+		if (window.location.pathname == '/') {
+			(0, _landing.landing)();
+		}
+	
 		menuTrigger.addEventListener('click', sidenav.open, false);
 		closeClickArea.addEventListener('click', closeSearch, false);
 	}
 	
 	init();
-	(0, _landing.landing)();
 
 /***/ },
 /* 1 */
@@ -174,15 +169,22 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function landing() {
-		(0, _tabs.tabs)();
 	
 		var newsletterTrigger = document.getElementById('newsletter-submit');
 		var testNotificationContent = document.getElementById('test-notification');
+		var nav = document.querySelector('.nav');
 		var testNotification = new _notifications2.default({
 			content: testNotificationContent,
 			timeout: 2500,
 			type: 'success'
 		});
+	
+		changeNavigation();
+		(0, _tabs.tabs)();
+	
+		function changeNavigation() {
+			nav.classList.add('landing-nav');
+		}
 	
 		function newsLetter() {
 			var test = new Event('test-message');

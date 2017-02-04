@@ -14,17 +14,6 @@ function init() {
 	var closeClickArea = document.querySelector('.close-click-area');
 	var searchResults = document.querySelector('.search-results-list');
 
-	var searchOptions = [
-		{
-			title: 'This is a test title',
-			description: 'This is a test description of the product'
-		},
-
-		{
-			title: 'This is a test title',
-			description: "This is a test description"
-		}
-	];
 
 	var sidenav = new offside();
 
@@ -99,11 +88,12 @@ function init() {
 		}, 200);
 	}
 
+	if (window.location.pathname == '/') {
+		landing();
+	}
+
 	menuTrigger.addEventListener('click', sidenav.open, false);
 	closeClickArea.addEventListener('click', closeSearch, false);
-
-
 }
 
 init();
-landing();
