@@ -48,6 +48,8 @@
 	
 	var _landing = __webpack_require__(1);
 	
+	var _contact = __webpack_require__(5);
+	
 	var _offside = __webpack_require__(4);
 	
 	var _offside2 = _interopRequireDefault(_offside);
@@ -139,7 +141,9 @@
 			}, 200);
 		}
 	
-		if (window.location.pathname == '/') {
+		if (window.location.pathname == '/contact') {
+			(0, _contact.contact)();
+		} else if (window.location.pathname == '/') {
 			(0, _landing.landing)();
 		}
 	
@@ -798,6 +802,109 @@
 	}();
 	
 	exports.default = offside;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.contact = contact;
+	
+	var _notifications = __webpack_require__(3);
+	
+	var _notifications2 = _interopRequireDefault(_notifications);
+	
+	var _validator = __webpack_require__(6);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function contact() {
+		var formWrapper = document.querySelectorAll('.form-wrapper');
+		var formInputs = document.querySelectorAll('.form-input');
+		var submitButton = document.querySelector('.form-submit-button');
+	
+		(0, _validator.onBlur)(formInputs);
+	}
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.onBlur = onBlur;
+	exports.removeBlur = removeBlur;
+	function onBlur(nodes) {
+		var i = void 0;
+		var len = nodes.length;
+	
+		for (i = 0; i < len; i++) {
+			var node = nodes[i];
+	
+			node.addEventListener('blur', inputBlur);
+		}
+	}
+	
+	function removeBlur(nodes) {
+		var i = void 0;
+		var len = nodes.length;
+	
+		for (i = 0; i < len; i++) {
+			var node = nodes[i];
+	
+			node.removeEventListener('blur', inputBlur);
+		}
+	}
+	
+	function inputBlur() {
+		var formContent = this.value;
+	
+		if (formContent == '') {
+			this.parentNode.classList.add('input-blank');
+	
+			if (this.parentNode.classList.contains('required-input')) {
+				this.parentNode.classList.remove('input-blank');
+				this.parentNode.classList.add('input-invalid');
+			}
+		}
+	
+		if (formContent !== '' && !this.parentNode.classList.contains('form-email-wrapper') && !this.parentNode.classList.contains('form-phone-wrapper')) {
+			if (this.parentNode.classList.contains('input-blank')) {
+				this.parentNode.classList.remove('input-blank');
+			}
+	
+			this.parentNode.classList.add('input-valid');
+		}
+	
+		checkValidForm();
+	}
+	
+	function checkValidForm() {
+		var formWrappers = document.querySelectorAll('.form-wrapper');
+		var submitButton = document.querySelector('.form-submit-button');
+		var valid = 0;
+		var i = void 0;
+		var len = formWrappers.length;
+	
+		for (i = 0; i < len; i++) {
+			var wrapper = formWrappers[i];
+	
+			if (wrapper.classList.contains('form-valid')) {
+				valid++;
+			}
+		}
+	
+		if (valid == len) {
+			submitButton.classList.add('form-valid');
+		}
+	}
 
 /***/ }
 /******/ ]);

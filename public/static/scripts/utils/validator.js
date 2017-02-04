@@ -43,9 +43,9 @@ function inputBlur() {
 	checkValidForm();
 }
 
-function checkValid() {
+function checkValidForm() {
 	let formWrappers = document.querySelectorAll('.form-wrapper');
-	let submitButton = document.querySelector('.form-submit');
+	let submitButton = document.querySelector('.form-submit-button');
 	let valid = 0;
 	let i;
 	let len = formWrappers.length;

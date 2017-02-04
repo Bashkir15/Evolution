@@ -1,4 +1,5 @@
 import { landing } from './static/scripts/pages/landing'
+import { contact } from './static/scripts/pages/contact'
 import offside from './static/scripts/components/offside'
 
 function init() {
@@ -88,7 +89,9 @@ function init() {
 		}, 200);
 	}
 
-	if (window.location.pathname == '/') {
+	if (window.location.pathname == '/contact') {
+		contact();
+	} else if (window.location.pathname == '/') {
 		landing();
 	}
 

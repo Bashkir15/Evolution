@@ -102,41 +102,41 @@
 				<p>If you don't feel like calling or coming in, you can always shoot us a direct message with the form below</p>
 
 				<form name='contact-form' class='contact-form'>
-					<div class='form-wrapper'>
-						<input type='text' name='name' id='contact-name'>
+					<div class='form-wrapper required-input'>
+						<input type='text' name='name' id='contact-name' class='form-input'>
 						<span class='highlight'></span>
 						<span class='bar'></span>
 						<label for='contact-name'>Name<span class='req'>*</span>
 						</label>
 					</div>
 
-					<div class='form-wrapper form-email-wrapper'>
-						<input type='email' name='email' id='contact-email'>
+					<div class='form-wrapper form-email-wrapper required-input'>
+						<input type='email' name='email' id='contact-email' class='form-input input-required'>
 						<span class='bar'></span>
 						<label for='contact-email'>Email<span class='req'>*</span>
 						</label>
 					</div>
 
 					<div class='form-wrapper'>
-						<input type='text' name='subject' id='contact-subject'>
+						<input type='text' name='subject' id='contact-subject' class='form-input'>
 						<span class='bar'></span>
 						<label for='contact-subject'>Subject</label>
 					</div>
 
 					<div class='form-wrapper form-phone-wrapper'>
-						<input type='phone' name='phone' id='contact-phone'>
+						<input type='phone' name='phone' id='contact-phone' class='form-input'>
 						<span class='bar'></span>
 						<label for='contact-phone'>Phone</label>
 					</div>
 
-					<div class='form-wrapper'>
-						<textarea rows='10' id='contact-message'></textarea>		
+					<div class='form-wrapper required-input'>
+						<textarea rows='10' id='contact-message' class='form-input'></textarea>		
 						<label for='contact-message'>Message<span class='req'>*</span>
 						</label>
 					</div>
 
 					<div class='form-submit'>
-						<button type='button' id='contact-submit' aria-label='submit the message form' class='form-submit'>
+						<button type='button' id='contact-submit' aria-label='submit the message form' class='form-submit-button'>
 							<span>Deliver</span>
 						</button>
 					</div>
