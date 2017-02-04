@@ -1,16 +1,17 @@
 .contact-form-container
-	padding: 50px 0
+	padding: 90px 0
 	background: rgba(19, 35, 47, 0.9)
 
 	p
-		@include lato()
+		@include open()
 		font-weight: normal
-		font-size: 17px
-		line-height: 30px
+		font-size: 15px
+		line-height: 32px
+		letter-spacing: 1px
 		width: 90%
 		margin: 0 auto
-		color: #fff
 		text-align: center
+		color: #fff	
 
 .contact-form
 	width: 90%
@@ -19,7 +20,7 @@
 .form-wrapper
 	position: relative
 	width: 100%
-	margin-bottom: 52px
+	margin-bottom: 62px
 
 	input
 		position: relative
@@ -82,9 +83,13 @@
 
 @media screen and (min-width: 600px)
 	.contact-form-container
-		padding: 75px 0
+		padding: 115px 0
 
 		p
-			text-align: center
-			line-height: 32px
+			font-size: 16px
+			line-height: 34px
+
+	.contact-form
+		width: 85%
+		margin-top: 85px
 
