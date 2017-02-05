@@ -721,8 +721,79 @@
 	var _aboutAnimation = __webpack_require__(7);
 	
 	function about() {
+		var video = document.querySelector('.about-video');
+		var playButton = document.querySelector('.play-button');
+		var muteButton = document.querySelector('.mute');
+		var fullScreenButton = document.querySelector('.full-screen');
+		var seekBar = document.querySelector('.seek-bar');
+		var volumeBar = document.querySelector('.volume-bar');
+	
 		(0, _aboutAnimation.init)();
 		(0, _aboutAnimation.animate)();
+		addEvents();
+	
+		function togglePlay() {
+			if (video.paused == true) {
+				video.play();
+				playButton.innerHTML = 'Pause';
+			} else {
+				video.pause();
+				playButton.innerHTML = 'Play';
+			}
+		}
+	
+		function toggleMute() {
+			if (video.muted == false) {
+				video.muted = true;
+				muteButton.innerHTML = 'Unmute';
+			} else {
+				video.muted = false;
+				muteButton.innerHTML = 'Mute';
+			}
+		}
+	
+		function toggleFullscreen() {
+			if (video.requestFullscreen) {
+				video.requestFullscreen();
+			} else if (video.mozRequestFullScreen) {
+				video.mozRequestFullScreen();
+			} else if (video.webkitRequestFullScreen) {
+				video.webkitRequestFullScreen();
+			}
+		}
+	
+		function seek() {
+			var time = video.duration * (seekBar.value / 100);
+			video.currentTime = time;
+		}
+	
+		function updateTime() {
+			var value = 100 / video.duration * video.currentTime;
+			seekBar.value = value;
+		}
+	
+		function play() {
+			video.play();
+		}
+	
+		function pause() {
+			video.pause();
+		}
+	
+		function updateVolume() {
+			video.volume = volumeBar.value;
+		}
+	
+		function addEvents() {
+			playButton.addEventListener('click', togglePlay, false);
+			muteButton.addEventListener('click', toggleMute, false);
+			fullScreenButton.addEventListener('click', toggleFullscreen, false);
+			seekBar.addEventListener('change', seek, false);
+			video.addEventListener('timeupdate', updateTime, false);
+			seekBar.addEventListener('mousedown', pause, false);
+			seekBar.addEventListener('mouseup', play, false);
+			volumeBar.addEventListener('change', updateVolume, false);
+		}
 	}
 
 /***/ },
@@ -736,6 +807,7 @@
 	});
 	exports.init = init;
 	exports.animate = animate;
+	
 	var camera = void 0,
 	    scene = void 0,
 	    renderer = void 0,
@@ -751,8 +823,6 @@
 	
 	function init() {
 		renderer = new THREE.WebGLRenderer();
-		//renderer.setSize(window.innerWidth, 500);
-	
 		scene = new THREE.Scene();
 	
 		camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);

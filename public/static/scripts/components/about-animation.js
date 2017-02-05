@@ -1,3 +1,4 @@
+
 let camera,
 scene,
 renderer,
@@ -14,8 +15,6 @@ var delta;
 
 export function init() {
 	renderer = new THREE.WebGLRenderer();
-	//renderer.setSize(window.innerWidth, 500);
-
 	scene = new THREE.Scene();
 
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);

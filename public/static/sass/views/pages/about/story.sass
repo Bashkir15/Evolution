@@ -2,8 +2,8 @@
 	display: flex
 	flex-direction: column
 	align-items: center
-	padding: 45px 0
-	border-bottom: 1px solid rgba(0,0,0,0.12)
+	padding: 75px 0
+	background: lighten(#c1bdba, 15%)
 
 .about-story-title
 	display: flex
@@ -31,19 +31,21 @@
 	text-align: center
 
 	blockquote
-		@include lato()
-		font-weight: 400
+		@include open()
+		font-weight: normal
 		font-size: 17px
 		letter-spacing: 2px
 		line-height: 30px
 		margin-bottom: 55px
 
 	p
-		@include lato()
-		font-weight: 300
+		display: none
+		@include open()
+		font-weight: normal
 		font-size: 16px
 		letter-spacing: 2px
 		line-height: 28px
+		color: #7d7d7d
 
 	a
 		text-decoration: none
