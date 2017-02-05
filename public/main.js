@@ -13,7 +13,7 @@ function init() {
 		contact();
 	} else if (window.location.pathname == '/about') {
 		about();
-	} else if (window.location.pathname == '/') {
+	} else {
 		landing();
 	}
 

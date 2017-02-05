@@ -6,6 +6,6 @@ export function serve(done) {
 	server.init({
 		files: ['./public/**/*.'],
 		port: 7000,
-		proxy: 'http://localhost:8000'
+		proxy: 'http://localhost:3000'
 	}, done);
 }

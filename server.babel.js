@@ -20,7 +20,7 @@ if (cluster.isMaster) {
 	let server = http.Server(app);
 
 	server.listen(appConfig.server.port, () => {
-		console.log(`Application is up and running at ${appConfig.server.host}${appConfig.server.post} and the environment is currently: ${process.env.NODE_ENV || 'development'}`);
+		console.log(`Application is up and running at ${appConfig.server.host}${appConfig.server.port} and the environment is currently: ${process.env.NODE_ENV || 'development'}`);
 	});
 
 	console.log('Worker %d running!', cluster.worker.id);
