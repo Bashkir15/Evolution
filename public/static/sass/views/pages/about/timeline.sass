@@ -2,6 +2,7 @@
 	padding: 50px 0
 	border-bottom: 1px solid rgba(0,0,0,0.12)
 	overflow: hidden
+	background: rgba(19, 35, 47, 0.9)
 
 .about-timeline-large
 	display: none
@@ -19,14 +20,23 @@
 		width: 100%
 
 	.timeline-marker
+		display: flex
+		align-items: center
+		justify-content: center
 		height: 75px
 		width: 75px
 		border-radius: 50%
 		background: rgba(0,0,0,0.12)
 
+		p
+			@include lato()
+			font-weight: 300
+			font-size: 17px
+			color: #fff
+
 	.timeline-vertical-line
 		height: 50px
-		border-right: 1px solid rgba(0,0,0,0.3)
+		border-right: 1px solid #fff
 
 		&.last
 			height: 0
@@ -37,6 +47,23 @@
 		width: 85%
 		margin: 0 auto
 		background: rgba(0,0,0,0.4)
+
+	.timeline-image
+		height: 50%
+		width: 100%
+
+	.timeline-bottom
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		padding-left: 10px
+
+		p
+			@include open()
+			font-weight: normal
+			font-size: 15px
+			line-height: 27px
+			color: #fff
 
 @media screen and (min-width: 640px)
 	.about-timeline
