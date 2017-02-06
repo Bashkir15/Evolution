@@ -30,6 +30,7 @@ export function init() {
 	scene.add(light);
 
 	var loader = new THREE.TextureLoader();
+	loader.crossOrigin = '';
 	var smokeTexture;
 	var smokeMaterial;
 	var smokeGeo;
