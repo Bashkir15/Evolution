@@ -723,13 +723,11 @@
 	function about() {
 		var video = document.querySelector('.about-video');
 		var playButton = document.querySelector('.play-button');
-		//const muteButton = document.querySelector('.mute');
+		var muteButton = document.querySelector('.mute');
 		var fullScreenButton = document.querySelector('.full-screen');
-		var progressContainer = document.querySelector('.progress-container');
-		var progressHolder = document.querySelector('.progress-box');
-		var progressBar = document.querySelector('.play-progress');
 		var seekBar = document.querySelector('.seek-bar');
-		//const volumeBar = document.querySelector('.volume-bar');
+		var volumeBar = document.querySelector('.volume-button');
+		var muteIcon = muteButton.querySelector('span');
 	
 		(0, _aboutAnimation.init)();
 		(0, _aboutAnimation.animate)();
@@ -752,10 +750,13 @@
 		function toggleMute() {
 			if (video.muted == false) {
 				video.muted = true;
-				muteButton.innerHTML = 'Unmute';
+				muteIcon.classList.remove('icon-volume_up');
+				muteIcon.classList.add('icon-volume_off');
 			} else {
 				video.muted = false;
-				muteButton.innerHTML = 'Mute';
+				video.volume = lastVolume;
+				muteIcon.classList.remove('icon-volume_off');
+				muteIcon.classList.add('icon-volume_up');
 			}
 		}
 	
@@ -767,10 +768,6 @@
 			} else if (video.webkitRequestFullScreen) {
 				video.webkitRequestFullScreen();
 			}
-		}
-	
-		function updatePlayProgress() {
-			progressBar.style.width = video.currentTime / video.duration * progressHolder.offsetWidth + 'px';
 		}
 	
 		function seek() {
@@ -793,17 +790,28 @@
 	
 		function updateVolume() {
 			video.volume = volumeBar.value;
+	
+			if (video.volume == 0) {
+				muteIcon.classList.remove('icon-volume_up');
+				muteIcon.classList.add('icon-volume_off');
+			} else {
+				if (muteIcon.classList.contains('icon-volume_off')) {
+					muteIcon.classList.remove('icon-volume_off');
+					muteIcon.classList.add('icon-volume_up');
+				}
+			}
 		}
 	
 		function addEvents() {
 			playButton.addEventListener('click', togglePlay, false);
-			//	muteButton.addEventListener('click', toggleMute, false);
+			muteButton.addEventListener('click', toggleMute, false);
 			fullScreenButton.addEventListener('click', toggleFullscreen, false);
+			//progressHolder.addEventListener('mouseup', play, false);
 			seekBar.addEventListener('change', seek, false);
-			video.addEventListener('timeupdate', updatePlayProgress, false);
+			video.addEventListener('timeupdate', updateTime, false);
 			seekBar.addEventListener('mousedown', pause, false);
 			seekBar.addEventListener('mouseup', play, false);
-			//	volumeBar.addEventListener('change', updateVolume, false);
+			volumeBar.addEventListener('change', updateVolume, false);
 		}
 	}
 
