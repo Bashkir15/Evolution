@@ -666,6 +666,7 @@
 	
 	function inputBlur() {
 		var formContent = this.value;
+		console.log(formContent);
 	
 		if (formContent == '') {
 			this.parentNode.classList.add('input-blank');

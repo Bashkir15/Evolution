@@ -22,6 +22,7 @@ export function removeBlur(nodes) {
 
 function inputBlur() {
 	let formContent = this.value;
+	console.log(formContent)
 
 	if (formContent == '') {
 		this.parentNode.classList.add('input-blank');
