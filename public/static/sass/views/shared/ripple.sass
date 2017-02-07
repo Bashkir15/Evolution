@@ -1,0 +1,17 @@
+.ripple
+	position: absolute
+	top: 0
+	left: 0
+	height: 50px
+	width: 50px
+	border-radius: 50%
+	background: rgba(0,0,0,0.4)
+	overflow: hidden
+	pointer-events: none
+	transform: translate(-50%, -50%)
+
+	&.is-animating
+		transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3 ease-in-out, opacity 0.6s ease-int-out
+
+	&.is-visible
+		opacity: 0.3

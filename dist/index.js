@@ -728,10 +728,41 @@
 		var seekBar = document.querySelector('.seek-bar');
 		var volumeBar = document.querySelector('.volume-button');
 		var muteIcon = muteButton.querySelector('span');
+		var items = document.querySelectorAll('.timeline-list li');
+	
+		var scrolling = false;
 	
 		(0, _aboutAnimation.init)();
 		(0, _aboutAnimation.animate)();
 		addEvents();
+	
+		function isInViewport(el) {
+			var rect = el.getBoundingClientRect();
+	
+			return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+		}
+	
+		function timelineEffect() {
+			var i = void 0;
+			var len = items.length;
+	
+			for (i = 0; i < len; i++) {
+				if (isInViewport(items[i])) {
+					items[i].classList.add('in-view');
+				}
+			}
+		}
+	
+		function scrollThrottle() {
+			if (!scrolling) {
+				window.requestAnimationFrame(function () {
+					timelineEffect();
+					scrolling = true;
+				});
+			}
+	
+			scrolling = false;
+		}
 	
 		function togglePlay() {
 			var playIcon = playButton.querySelector('span');
@@ -812,6 +843,9 @@
 			seekBar.addEventListener('mousedown', pause, false);
 			seekBar.addEventListener('mouseup', play, false);
 			volumeBar.addEventListener('change', updateVolume, false);
+	
+			window.addEventListener('load', timelineEffect);
+			window.addEventListener('scroll', scrollThrottle);
 		}
 	}
 
@@ -857,6 +891,7 @@
 		scene.add(light);
 	
 		var loader = new THREE.TextureLoader();
+		loader.crossOrigin = '';
 		var smokeTexture;
 		var smokeMaterial;
 		var smokeGeo;

@@ -8,10 +8,46 @@ export function about() {
 	const seekBar = document.querySelector('.seek-bar');
 	const volumeBar = document.querySelector('.volume-button');
 	const muteIcon = muteButton.querySelector('span');
+	const items = document.querySelectorAll('.timeline-list li');
+
+	let scrolling = false;
 
 	init();
 	animate();
 	addEvents();
+
+	function isInViewport(el) {
+		let rect = el.getBoundingClientRect();
+
+		return (
+			rect.top >= 0 &&
+			rect.left >= 0 &&
+			rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+			rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+		);
+	}
+
+	function timelineEffect() {
+		let i;
+		let len = items.length;
+
+		for (i = 0; i < len; i++) {
+			if (isInViewport(items[i])) {
+				items[i].classList.add('in-view');
+			}
+		}
+	}
+
+	function scrollThrottle() {
+		if (!scrolling) {
+			window.requestAnimationFrame(() => {
+				timelineEffect();
+				scrolling = true;
+			});
+		}
+
+		scrolling = false;
+	}
 
 	function togglePlay() {
 		const playIcon = playButton.querySelector('span');
@@ -92,5 +128,8 @@ export function about() {
 		seekBar.addEventListener('mousedown', pause, false);
 		seekBar.addEventListener('mouseup', play, false);
 		volumeBar.addEventListener('change', updateVolume, false);
+
+		window.addEventListener('load', timelineEffect);
+		window.addEventListener('scroll', scrollThrottle);
 	}
 }
