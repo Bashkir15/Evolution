@@ -1,6 +1,9 @@
 import { init, animate } from '../components/about-animation'
+import Search from '../components/search'
+import offside from '../components/offside'
 
 export function about() {
+	const menuTrigger = document.querySelector('.menu-icon');
 	const video = document.querySelector('.about-video');
 	const playButton = document.querySelector('.play-button');
 	const muteButton = document.querySelector('.mute');
@@ -9,6 +12,9 @@ export function about() {
 	const volumeBar = document.querySelector('.volume-button');
 	const muteIcon = muteButton.querySelector('span');
 	const items = document.querySelectorAll('.timeline-list li');
+
+	const sideNav = new offside();
+	const search = new Search();
 
 	let scrolling = false;
 
@@ -128,6 +134,8 @@ export function about() {
 		seekBar.addEventListener('mousedown', pause, false);
 		seekBar.addEventListener('mouseup', play, false);
 		volumeBar.addEventListener('change', updateVolume, false);
+
+		menuTrigger.addEventListener('click', sideNav.close, false);
 
 		window.addEventListener('load', timelineEffect);
 		window.addEventListener('scroll', scrollThrottle);

@@ -12,7 +12,7 @@ import config from '../config'
 import handleErrors from '../utils/handleErrors'
 
 export function processScripts(done) {
-	gulp.src(config.dev.scripts)
+	gulp.src(config.dev.mainScript)
 		.pipe(plumber({
 			errorHandler: handleErrors
 		}))
@@ -24,6 +24,22 @@ export function processScripts(done) {
 		.pipe(sourceMaps.write('.'))
 		.pipe(gulp.dest(config.prod.scripts))
 		.pipe(notify('Scripts task complete'))
+		.pipe(server.stream())
+		done()
+}
+
+export function processAbout(done) {
+	gulp.src(config.dev.aboutScript)
+		.pipe(plumber({
+			errorHandler: handleErrors
+		}))
+		.pipe(sourceMaps.init())
+		.pipe(rename((path) => {
+			path.extname = '.min.js'
+		}))
+		.pipe(sourceMaps.write('.'))
+		.pipe(gulp.dest(config.prod.scripts))
+		.pipe(gulp.dest('About scripts task complete'))
 		.pipe(server.stream())
 		done()
 }

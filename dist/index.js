@@ -721,7 +721,18 @@
 	
 	var _aboutAnimation = __webpack_require__(7);
 	
+	var _search = __webpack_require__(8);
+	
+	var _search2 = _interopRequireDefault(_search);
+	
+	var _offside = __webpack_require__(9);
+	
+	var _offside2 = _interopRequireDefault(_offside);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	function about() {
+		var menuTrigger = document.querySelector('.menu-icon');
 		var video = document.querySelector('.about-video');
 		var playButton = document.querySelector('.play-button');
 		var muteButton = document.querySelector('.mute');
@@ -730,6 +741,9 @@
 		var volumeBar = document.querySelector('.volume-button');
 		var muteIcon = muteButton.querySelector('span');
 		var items = document.querySelectorAll('.timeline-list li');
+	
+		var sideNav = new _offside2.default();
+		var search = new _search2.default();
 	
 		var scrolling = false;
 	
@@ -844,6 +858,8 @@
 			seekBar.addEventListener('mousedown', pause, false);
 			seekBar.addEventListener('mouseup', play, false);
 			volumeBar.addEventListener('change', updateVolume, false);
+	
+			menuTrigger.addEventListener('click', sideNav.close, false);
 	
 			window.addEventListener('load', timelineEffect);
 			window.addEventListener('scroll', scrollThrottle);
